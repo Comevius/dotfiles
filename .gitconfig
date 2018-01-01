@@ -1,0 +1,24 @@
+[user]
+    name = Comevius
+    email = comevius@gmail.com
+
+[github]
+    user = Comevius
+
+[core]
+    editor = nano
+    autocrlf = input
+    quotepath = false
+    commentchar = ";"
+
+[push]
+    default = current
+
+[color]
+    ui = true
+
+[alias]
+    tree = log --oneline --decorate --graph
+
+[commit]
+    gpgsign = true

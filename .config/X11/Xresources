@@ -1,0 +1,20 @@
+Xft.antialias: true
+Xft.autohint: false
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcdlight
+Xft.rgba: rgb
+
+*.foreground: #EEEEEE
+*.background: #000000
+
+URxvt.font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1,xft:IPAGothic
+URxvt.boldfont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1,xft:IPAGothic
+URxvt.scrollBar: false
+URxvt.saveLines: 0
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+rofi.font: sans-serif 11
+
+

@@ -224,7 +224,7 @@ user_pref("media.gmp-gmpopenh264.enabled",                   false);
 user_pref("media.gmp-manager.url",                           "");
 
 // Pocket
-user_pref("extensions.pocket.enabled",                       true);
+user_pref("extensions.pocket.enabled",                       false);
 
 // Safe Browsing
 user_pref("browser.safebrowsing.downloads.enabled",          false);

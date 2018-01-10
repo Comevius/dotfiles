@@ -11,6 +11,30 @@
  '(initial-scratch-message nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
+ '(org-agenda-custom-commands
+   (quote
+    (("w" todo "WAITING"
+      ((org-agenda-files
+        (quote
+         ("~/Agenda/next.org")))))
+     ("i" "Inbox" alltodo ""
+      ((org-agenda-files
+        (quote
+         ("~/Agenda/inbox.org")))))
+     ("t" "Tasks" alltodo ""
+      ((org-agenda-files
+        (quote
+         ("~/Agenda/next.org")))
+       (org-agenda-category-filter-preset
+        (quote
+         ("+Task")))))
+     ("p" "Projects" alltodo ""
+      ((org-agenda-files
+        (quote
+         ("~/Agenda/next.org")))
+       (org-agenda-category-filter-preset
+        (quote
+         ("+Project"))))))))
  '(org-agenda-files (quote ("~/Agenda/inbox.org" "~/Agenda/next.org")))
  '(org-capture-templates
    (quote

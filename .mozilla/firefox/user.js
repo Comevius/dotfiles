@@ -35,6 +35,11 @@ user_pref("media.webspeech.synth.enabled",                   false);
 user_pref("javascript.options.asmjs",                        true);
 // WebAssembly
 user_pref("javascript.options.wasm",                         true);
+// SharedArrayBuffer
+  // Disabled by default due to Spectre (https://spectreattack.com)
+  // https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack
+  // Enable only after fixed or for offline testing
+user_pref("javascript.options.shared_memory",                false);
 
 // WebRTC
 user_pref("media.peerconnection.enabled",                    true);

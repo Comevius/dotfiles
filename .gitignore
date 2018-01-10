@@ -1,0 +1,13 @@
+/*
+!*/*
+!.gitignore
+!.gitconfig
+!.profile
+!.xinitrc
+!.config/
+!.emacs.d/
+.emacs.d/*
+!.emacs.d/*.el
+!.mozilla/firefox/
+.mozilla/firefox/*
+!.mozilla/firefox/user.js

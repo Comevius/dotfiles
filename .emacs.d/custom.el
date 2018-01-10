@@ -11,6 +11,16 @@
  '(initial-scratch-message nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
+ '(org-agenda-files (quote ("~/Agenda/inbox.org" "~/Agenda/next.org")))
+ '(org-capture-templates
+   (quote
+    (("r" "Inbox" entry
+      (file "~/Agenda/inbox.org")
+      "* TODO %i%?"))))
+ '(org-refile-targets
+   (quote
+    (("~/Agenda/next.org" :maxlevel . 3)
+     ("~/Agenda/someday.org" :maxlevel . 3))))
  '(package-selected-packages
    (quote
     (projectile use-package swiper org move-text magit leuven-theme dart-mode avy)))

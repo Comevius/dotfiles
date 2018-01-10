@@ -44,7 +44,8 @@
 
 (use-package org
   :custom ((org-catch-invisible-edits 'error)
-	   (org-M-RET-may-split-line nil))
+	   (org-M-RET-may-split-line nil)
+           (org-cycle-separator-lines 1))
   :bind (:map org-mode-map
 	 ("C-n"          . nil)     
          ("C-e"          . nil)

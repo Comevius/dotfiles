@@ -73,16 +73,12 @@
   
 (use-package flycheck
   :ensure t
-  :pin melpa-stable
-  :hook dart-mode)
+  :pin melpa-stable)
 
 (use-package dart-mode
   :ensure t
-  :disabled t
   :custom
-  (dart-enable-analysis-server t))
-;; symbol's value as variable is void: dart--analysis-server-process-filter
-;; defun*
+  (dart-enable-analysis-server nil))
 
 (use-package move-text
   :ensure t)

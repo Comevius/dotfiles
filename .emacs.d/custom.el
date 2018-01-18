@@ -47,7 +47,7 @@
      ("~/Agenda/someday.org" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (projectile use-package swiper org move-text magit leuven-theme dart-mode avy)))
+    (ivy flycheck projectile use-package swiper org move-text magit leuven-theme dart-mode avy)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tool-bar-mode nil)

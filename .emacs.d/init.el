@@ -47,7 +47,7 @@
 	   (org-M-RET-may-split-line nil)
            (org-cycle-separator-lines 1))
   :bind (:map org-mode-map
-	 ("C-n"          . nil)     
+	 ("C-n"          . nil)
          ("C-e"          . nil)
          ("M-n"          . org-forward-element)
 	 ("M-e"          . org-backward-element)
@@ -78,8 +78,10 @@
 (use-package dart-mode
   :ensure t
   :custom
-  (dart-enable-analysis-server nil))
-
+  (dart-analysis-server-snapshot-path (concat (getenv "DART_SDK_PATH") "/snapshots/analysis_server.dart.snapshot"))
+  (dart-enable-analysis-server t)
+  (dart-debug nil))
+  
 (use-package move-text
   :ensure t)
 

@@ -4,8 +4,15 @@ export TERMINAL=urxvtc
 export VISUAL='emacsclient -c'
 export BROWSER=firefox
 
-export ANDROID_SDK_ROOT=$HOME/Android/SDK
+export ANDROID_SDK_ROOT=$HOME/android
+export ANDROID_HOME=$ANDROID_SDK_ROOT
 export QEMU_AUDIO_DRV=none
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/tools/bin
+
+export FLUTTER_ROOT=$HOME/flutter
+export DART_SDK_PATH=$FLUTTER_ROOT/bin/cache/dart-sdk
+export PATH=$PATH:$FLUTTER_ROOT/bin:$DART_SDK_PATH/bin
 
 export NO_AT_BRIDGE=1
 
@@ -23,6 +30,7 @@ export __GL_SHADER_DISK_CACHE_PATH=$XDG_CACHE_HOME/nv
 export CUDA_CACHE_PATH=$XDG_CACHE_HOME/nv
 export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
 export BUNDLE_CACHE_PATH=$XDG_CACHE_HOME/bundle
+export PUB_CACHE=$XDG_CACHE_HOME/pub
 
 # XDG_DATA_HOME
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle

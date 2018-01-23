@@ -41,8 +41,6 @@ export GEM_HOME=$XDG_DATA_HOME/gem
 export RXVT_SOCKET=$XDG_RUNTIME_DIR/urxvtd
 export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
 
-export CDPATH=.:$HOME:$XDG_DOWNLOAD_DIR:$XDG_MUSIC_DIR
-
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 if [ -z $DISPLAY ] && [ $XDG_VTNR -eq 1 ]; then

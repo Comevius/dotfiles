@@ -4,12 +4,14 @@ export TERMINAL=urxvtc
 export VISUAL='emacsclient -c'
 export BROWSER=firefox
 
+# Android
 export ANDROID_SDK_ROOT=$HOME/android
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export QEMU_AUDIO_DRV=none
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 
+# Flutter
 export FLUTTER_ROOT=$HOME/flutter
 export DART_SDK_PATH=$FLUTTER_ROOT/bin/cache/dart-sdk
 export PATH=$PATH:$FLUTTER_ROOT/bin:$DART_SDK_PATH/bin

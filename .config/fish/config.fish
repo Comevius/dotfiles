@@ -41,7 +41,6 @@ function fish_user_key_bindings
   bind \cp __fish_paginate
   bind \cg __fish_cancel_commandline
   bind \cl __fish_list_current_token
-  bind \; __fish_toggle_comment_commandline
   bind -m paste \e\[200~ __fish_start_bracketed_paste
   bind -M paste "" self-insert
   bind -M paste \r "commandline -i \n"

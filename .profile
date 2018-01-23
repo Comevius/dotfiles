@@ -22,10 +22,6 @@ export NO_AT_BRIDGE=1
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
-export XDG_DOWNLOAD_DIR=$HOME/Downloads
-export XDG_DESKTOP_DIR=$XDG_DOWNLOAD_DIR
-export XDG_DOCUMENTS_DIR=$HOME/Documents
-export XDG_MUSIC_DIR=$HOME/Music
 
 # XDG_CONFIG_HOME
 export IDEA_PROPERTIES=$XDG_CONFIG_HOME/idea.properties

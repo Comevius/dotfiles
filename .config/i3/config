@@ -20,7 +20,6 @@ bindcode $mod+61 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # kill focused window
 bindsym $mod+q kill
-bindsym --release button2 kill
 bindsym --whole-window $mod+button2 kill
 
 # change focus

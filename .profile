@@ -9,7 +9,7 @@ export ANDROID_SDK_ROOT=$HOME/android
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export QEMU_AUDIO_DRV=none
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 
 # Flutter
 export FLUTTER_ROOT=$HOME/flutter

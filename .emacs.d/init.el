@@ -33,7 +33,6 @@
 
 (use-package magit
   :ensure t
-  :pin melpa-stable
   :bind (:map magit-mode-map
 	 ("n"   . magit-section-forward)
 	 ("e"   . magit-section-backward)
@@ -76,8 +75,7 @@
   :ensure t)
   
 (use-package flycheck
-  :ensure t
-  :pin melpa-stable)
+  :ensure t)
 
 (use-package dart-mode
   :ensure t

@@ -82,7 +82,6 @@
 (use-package dart-mode
   :ensure t
   :custom
-  (dart-analysis-server-snapshot-path (concat (getenv "DART_SDK_PATH") "/snapshots/analysis_server.dart.snapshot"))
   (dart-enable-analysis-server t)
   (dart-debug nil))
   

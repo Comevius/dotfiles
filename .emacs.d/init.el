@@ -46,9 +46,10 @@
 	 (";"   . magit-gitignore)))
 
 (use-package org
-  :custom ((org-catch-invisible-edits 'error)
-	   (org-M-RET-may-split-line nil)
-           (org-cycle-separator-lines 1))
+  :init
+  (setq org-catch-invisible-edits 'error)
+  (setq org-M-RET-may-split-line nil)
+  (setq org-cycle-separator-lines 1)
   :bind (:map org-mode-map
 	 ("C-n"          . nil)
          ("C-e"          . nil)
@@ -79,9 +80,12 @@
 
 (use-package dart-mode
   :ensure t
-  :custom
-  (dart-enable-analysis-server t)
-  (dart-debug nil))
+  :init
+  (setq dart-sdk-path (getenv "DART_SDK_PATH"))
+  (setq dart-enable-analysis-server t)
+  (setq dart-debug nil)
+  :bind (:map dart-mode-map
+         ("C-i" . nil)))
   
 (use-package move-text
   :ensure t)
@@ -241,5 +245,5 @@
 
 (use-package avy
   :ensure t
-  :custom
-  (avy-keys '(?n ?e ?k ?l ?u ?p ?y ?f ?b ?g ?t ?h ?m ?c ?r ?d)))
+  :init
+  (setq avy-keys '(?n ?e ?k ?l ?u ?p ?y ?f ?b ?g ?t ?h ?m ?c ?r ?d)))

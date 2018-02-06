@@ -31,20 +31,6 @@
         (unless (custom-theme-p 'leuven)
           (load-theme 'leuven t))))))
 
-(use-package magit
-  :ensure t
-  :bind (:map magit-mode-map
-	 ("n"   . magit-section-forward)
-	 ("e"   . magit-section-backward)
-	 ("C-n" . magit-section-forward-sibling)
-	 ("C-e" . magit-section-backward-sibling)
-         ("E"   . nil)
-	 ("N"   . nil)
-	 ("p"   . magit-push-popup)
-	 ("i"   . magit-ediff-dwim)
-	 ("I"   . magit-ediff-popup)
-	 (";"   . magit-gitignore)))
-
 (use-package org
   :init
   (setq org-catch-invisible-edits 'error)
@@ -72,6 +58,20 @@
 	 ("C-k"          . org-kill-line)
 	 ("C-y"          . org-yank)))
 
+(use-package magit
+  :ensure t
+  :bind (:map magit-mode-map
+         ("n"   . magit-section-forward)
+         ("e"   . magit-section-backward)
+         ("C-n" . magit-section-forward-sibling)
+         ("C-e" . magit-section-backward-sibling)
+         ("E"   . nil)
+         ("N"   . nil)
+         ("p"   . magit-push-popup)
+         ("i"   . magit-ediff-dwim)
+         ("I"   . magit-ediff-popup)
+         (";"   . magit-gitignore)))
+
 (use-package projectile
   :ensure t)
   
@@ -86,7 +86,94 @@
   (setq dart-debug nil)
   :bind (:map dart-mode-map
          ("C-i" . nil)))
-  
+
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1)
+  :bind (:map ivy-minibuffer-map
+	 ("C-n"   . ivy-next-line)
+	 ("C-e"   . ivy-previous-line)
+	 ("M-["   . ivy-scroll-up-command)
+	 ("M-]"   . ivy-scroll-down-command)
+         ("C-M-[" . ivy-end-of-buffer)
+	 ("C-M-]" . ivy-beginning-of-buffer)
+	 ("C-a"   . swiper-avy)
+	 ("C-d"   . ivy-backward-kill-word)
+	 ("C-m"   . ivy-done)
+	 ("C-l"   . ivy-kill-line)))
+
+(use-package swiper
+  :ensure t)
+
+(use-package avy
+  :ensure t
+  :init
+  (setq avy-keys '(?n ?e ?k ?l ?u ?p ?y ?f ?b ?g ?t ?h ?m ?c ?r ?d)))
+
+(use-package bind-key
+  :init
+  (define-key key-translation-map (kbd "C-q") (kbd "C-u"))
+  (define-key key-translation-map (kbd "C-u") (kbd "C-q"))
+  (define-key key-translation-map (kbd "M-q") (kbd "M-u"))
+  (define-key key-translation-map (kbd "M-u") (kbd "M-q"))
+  :bind  (("C-n"     . next-line)
+          ("C-e"     . previous-line)
+          ("M-n"     . nil)
+	  ("M-e"     . nil)
+	  ("C-M-n"   . nil)
+	  ("C-M-e"   . nil)
+	  ("M-["     . scroll-up-command)
+	  ("M-]"     . scroll-down-command)
+	  ("C-M-["   . end-of-buffer)
+	  ("C-M-]"   . beginning-of-buffer)
+	  ("C-h"     . beginning-of-indentation-or-line)
+	  ("C-t"     . end-of-line)
+	  ("M-h"     . backward-sentence)
+	  ("M-t"     . forward-sentence)
+	  ("C-M-h"   . backward-paragraph)
+	  ("C-M-t"   . forward-paragraph)
+	  ("C-o"     . backward-char)
+	  ("C-i"     . forward-char)
+	  ("M-o"     . backward-word)
+	  ("M-i"     . forward-word)
+	  ("C-M-o"   . backward-sexp)
+	  ("C-M-i"   . forward-sexp)
+	  ("C-d"     . backward-kill-char-or-word)
+	  ("M-d"     . backward-kill-line)
+	  ("C-M-d"   . delete-inidentation)
+	  ("C-f"     . find-file)
+	  ("C-b"     . ivy-switch-buffer)
+	  ("M-b"     . kill-buffer)
+	  ("C-M-b"   . kill-matching-buffers)
+	  ("C-s"     . swiper)
+	  ("C-a"     . avy-goto-char-timer)
+	  ("M-a"     . avy-goto-word-1)
+	  ("C-M-a"   . avy-goto-line)
+	  ("C-l"     . kill-whole-line-or-region)
+          ("M-l"     . avy-kill-whole-line)
+	  ("C-M-l"   . avy-kill-ring-save-whole-line)
+	  ("C-k"     . kill-region-or-avy)
+	  ("M-k"     . kill-ring-save-or-avy)
+	  ("C-q"     . undo)
+	  ("M-q"     . undo-only)
+	  ("C-g"     . keyboard-quit)
+	  ("M-g"     . keyboard-escape-quit)
+	  ("C-;"     . comment-or-uncomment-line-or-region)
+	  ("C-w"     . other-window)
+	  ("C-v"     . magit-status)
+	  ("C-r"     . org-agenda)
+	  ("M-r"     . org-capture)
+	  ("C-M-r"   . org-store-link)
+	  ("C-p"     . projectile-command-map)
+          ("C-S-n"   . move-text-down)
+	  ("C-S-e"   . move-text-up)
+	  ("C-S-h"   . indent-rigidly-line-or-region-left-to-tab-stop)
+	  ("C-S-t"   . indent-rigidly-line-or-region-right-to-tab-stop)
+	  ("C-S-o"   . indent-rigidly-line-or-region-left)
+	  ("C-S-i"   . indent-rigidly-line-or-region-right)
+	  ("<C-tab>" . indent-relative)))
+
 (use-package move-text
   :ensure t)
 
@@ -160,90 +247,3 @@
   (interactive)
   (let ((current-region (line-or-region)))
     (comment-or-uncomment-region (car current-region) (cdr current-region))))
-   	
-(use-package bind-key
-  :init
-  (define-key key-translation-map (kbd "C-q") (kbd "C-u"))
-  (define-key key-translation-map (kbd "C-u") (kbd "C-q"))
-  (define-key key-translation-map (kbd "M-q") (kbd "M-u"))
-  (define-key key-translation-map (kbd "M-u") (kbd "M-q"))
-  :bind  (("C-n"     . next-line)
-          ("C-e"     . previous-line)
-          ("M-n"     . nil)
-	  ("M-e"     . nil)
-	  ("C-M-n"   . nil)
-	  ("C-M-e"   . nil)
-	  ("M-["     . scroll-up-command)
-	  ("M-]"     . scroll-down-command)
-	  ("C-M-["   . end-of-buffer)
-	  ("C-M-]"   . beginning-of-buffer)
-	  ("C-h"     . beginning-of-indentation-or-line)
-	  ("C-t"     . end-of-line)
-	  ("M-h"     . backward-sentence)
-	  ("M-t"     . forward-sentence)
-	  ("C-M-h"   . backward-paragraph)
-	  ("C-M-t"   . forward-paragraph)
-	  ("C-o"     . backward-char)
-	  ("C-i"     . forward-char)
-	  ("M-o"     . backward-word)
-	  ("M-i"     . forward-word)
-	  ("C-M-o"   . backward-sexp)
-	  ("C-M-i"   . forward-sexp)
-	  ("C-d"     . backward-kill-char-or-word)
-	  ("M-d"     . backward-kill-line)
-	  ("C-M-d"   . delete-inidentation)
-	  ("C-f"     . find-file)
-	  ("C-b"     . ivy-switch-buffer)
-	  ("M-b"     . kill-buffer)
-	  ("C-M-b"   . kill-matching-buffers)
-	  ("C-s"     . swiper)
-	  ("C-a"     . avy-goto-char-timer)
-	  ("M-a"     . avy-goto-word-1)
-	  ("C-M-a"   . avy-goto-line)
-	  ("C-l"     . kill-whole-line-or-region)
-          ("M-l"     . avy-kill-whole-line)
-	  ("C-M-l"   . avy-kill-ring-save-whole-line)
-	  ("C-k"     . kill-region-or-avy)
-	  ("M-k"     . kill-ring-save-or-avy)
-	  ("C-q"     . undo)
-	  ("M-q"     . undo-only)
-	  ("C-g"     . keyboard-quit)
-	  ("M-g"     . keyboard-escape-quit)
-	  ("C-;"     . comment-or-uncomment-line-or-region)
-	  ("C-w"     . other-window)
-	  ("C-v"     . magit-status)
-	  ("C-r"     . org-agenda)
-	  ("M-r"     . org-capture)
-	  ("C-M-r"   . org-store-link)
-	  ("C-p"     . projectile-command-map)
-          ("C-S-n"   . move-text-down)
-	  ("C-S-e"   . move-text-up)
-	  ("C-S-h"   . indent-rigidly-line-or-region-left-to-tab-stop)
-	  ("C-S-t"   . indent-rigidly-line-or-region-right-to-tab-stop)
-	  ("C-S-o"   . indent-rigidly-line-or-region-left)
-	  ("C-S-i"   . indent-rigidly-line-or-region-right)
-	  ("<C-tab>" . indent-relative)))
-
-(use-package ivy
-  :ensure t
-  :config
-  (ivy-mode 1)
-  :bind (:map ivy-minibuffer-map
-	 ("C-n"   . ivy-next-line)
-	 ("C-e"   . ivy-previous-line)
-	 ("M-["   . ivy-scroll-up-command)
-	 ("M-]"   . ivy-scroll-down-command)
-         ("C-M-[" . ivy-end-of-buffer)
-	 ("C-M-]" . ivy-beginning-of-buffer)
-	 ("C-a"   . swiper-avy)
-	 ("C-d"   . ivy-backward-kill-word)
-	 ("C-m"   . ivy-done)
-	 ("C-l"   . ivy-kill-line)))
-
-(use-package swiper
-  :ensure t)
-
-(use-package avy
-  :ensure t
-  :init
-  (setq avy-keys '(?n ?e ?k ?l ?u ?p ?y ?f ?b ?g ?t ?h ?m ?c ?r ?d)))

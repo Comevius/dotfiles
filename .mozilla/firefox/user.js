@@ -180,6 +180,7 @@ user_pref("network.prefetch-next",                           false);
 user_pref("network.dns.disablePrefetch",                     true);
 // Speculative connections
 user_pref("network.predictor.enabled",                       false);
+user_pref("network.predictor.enable-prefetch",               false);
 user_pref("network.http.speculative-parallel-limit",         0);
 user_pref("browser.urlbar.speculativeConnect.enabled",       false);
 

@@ -81,7 +81,7 @@
 
 (use-package projectile
   :ensure t)
-  
+
 (use-package flycheck
   :ensure t)
 
@@ -209,7 +209,7 @@
   (if (use-region-p)
       (cons (region-beginning) (region-end))
     (cons (line-beginning-position) (line-end-position))))
- 
+
 (defun indent-rigidly-line-or-region (arg)
   (interactive)
   (let ((current-region (line-or-region)))
@@ -223,7 +223,7 @@
 (defun indent-rigidly-line-or-region-right ()
   (interactive)
   (indent-rigidly-line-or-region 1))
-  
+
 (defun indent-rigidly-line-or-region-right-to-tab-stop ()
   (interactive)
   (indent-rigidly-line-or-region (indent-next-tab-stop 0)))

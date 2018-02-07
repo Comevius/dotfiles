@@ -148,7 +148,7 @@
 	  ("C-M-i"   . forward-sexp)
 	  ("C-d"     . backward-kill-char-or-word)
 	  ("M-d"     . backward-kill-line)
-	  ("C-M-d"   . delete-inidentation)
+	  ("C-M-d"   . delete-indentation)
 	  ("C-f"     . find-file)
 	  ("C-b"     . ivy-switch-buffer)
 	  ("M-b"     . kill-buffer)

@@ -31,6 +31,13 @@
         (unless (custom-theme-p 'leuven)
           (load-theme 'leuven t))))))
 
+(use-package whitespace
+  :init
+  (setq whitespace-style '(face empty tabs lines-tail trailing))
+  (setq whitespace-line-column 80)
+  :config
+  (global-whitespace-mode t))
+
 (use-package org
   :init
   (setq org-catch-invisible-edits 'error)

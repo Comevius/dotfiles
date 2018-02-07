@@ -97,6 +97,11 @@ user_pref("network.protocol-handler.external.magnet",        true);
 // Only private browsing
 user_pref("browser.privatebrowsing.autostart",		     true);
 
+// First party isolation
+// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
+user_pref("privacy.firstparty.isolate",                        true);
+user_pref("privacy.firstparty.isolate.restrict_opener_access", false);
+
 // Cache
 user_pref("network.http.use-cache",                          true);
 // Cache on disk

@@ -189,6 +189,13 @@ user_pref("network.predictor.enable-prefetch",               false);
 user_pref("network.http.speculative-parallel-limit",         0);
 user_pref("browser.urlbar.speculativeConnect.enabled",       false);
 
+// Referer header
+user_pref("network.http.sendRefererHeader",                  2);
+user_pref("network.http.referer.trimmingPolicy",             0);
+user_pref("network.http.referer.XOriginPolicy",              2);
+user_pref("network.http.referer.XOriginTrimmingPolicy",      0);
+user_pref("network.http.referer.spoofSource",                false);
+
 // Captive portal detection
 user_pref("network.captive-portal-service.enabled",          false);
 user_pref("captivedetect.canonicalURL",                      "");

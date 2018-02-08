@@ -43,6 +43,8 @@
   (setq org-catch-invisible-edits 'error)
   (setq org-M-RET-may-split-line nil)
   (setq org-cycle-separator-lines 1)
+  :config
+  (add-to-list 'org-modules 'org-habit)
   :bind (:map org-mode-map
 	 ("C-n"          . nil)
          ("C-e"          . nil)

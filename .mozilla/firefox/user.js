@@ -277,7 +277,7 @@ user_pref("privacy.resistFingerprinting",                    true);
 // Off-main-thread compositing (OMTC)
 user_pref("layers.acceleration.force-enabled",               true);
 // Off-main-thread painting (OMTP)
-user_pref("layers.omtp.enabled",                             false);
+user_pref("layers.omtp.enabled",                             true);
 
 
 

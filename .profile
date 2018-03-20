@@ -10,6 +10,8 @@ export ANDROID_HOME=$ANDROID_SDK_ROOT
 export QEMU_AUDIO_DRV=none
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export SDKMANAGER_OPTS="--add-modules=java.xml.bind"
 
 # Flutter
 export FLUTTER_ROOT=$HOME/flutter

@@ -1,4 +1,4 @@
-font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+font -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
 
 set $mod Mod4
 
@@ -27,7 +27,7 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-	
+
 # move focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down

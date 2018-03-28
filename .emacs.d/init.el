@@ -29,7 +29,10 @@
     (lambda (frame)
       (with-selected-frame frame
         (unless (custom-theme-p 'leuven)
-          (load-theme 'leuven t))))))
+          (load-theme 'leuven t)))))
+  :config
+  (custom-theme-set-faces 'leuven
+    '(whitespace-line ((t (:background "white smoke"))))))
 
 (use-package whitespace
   :init

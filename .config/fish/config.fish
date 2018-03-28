@@ -1,5 +1,4 @@
 set fish_greeting
-set -g fish_key_bindings fish_vi_key_bindings
 
 alias ls='ls -l --group-directories-first --almost-all --human-readable --color'
 alias free='free -m'

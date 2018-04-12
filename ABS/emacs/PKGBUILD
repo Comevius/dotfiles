@@ -25,6 +25,6 @@ build() {
 package() {
   cd "$srcdir"/emacs-26.1
   make DESTDIR="$pkgdir" install
-  install -d "$pkgdir"/usr/lib/systemd/user/emacs.service.d
-  cp -r "$srcdir"/override.conf "$pkgdir"/usr/lib/systemd/user/emacs.service.d
+  cd "$srcdir"
+  install -D override.conf -t "$pkgdir"/usr/lib/systemd/user/emacs.service.d
 }

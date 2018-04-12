@@ -16,5 +16,3 @@ URxvt.perl-ext:
 URxvt.perl-ext-common:
 
 rofi.font: sans-serif 11
-
-

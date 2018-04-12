@@ -1,0 +1,30 @@
+pkgname=emacs
+pkgver=26.0.99
+pkgrel=1
+pkgdesc="Emacs text editor"
+arch=('x86_64')
+url="http://www.gnu.org/software/emacs/emacs.html"
+license=('GPL3')
+depends=('m17n-lib' 'libotf' 'gnutls' 'jansson' 'libxml2' 'libsystemd')
+source=("ftp://alpha.gnu.org/gnu/emacs/pretest/emacs-26.1-rc1.tar.xz"
+        "override.conf")
+sha256sums=('6594e668de00b96e73ad4f168c897fe4bca7c55a4caf19ee20eac54b62a05758'
+            '0d8c7f4ba589e26df50b9a21025dee13838924e10cbca4acbff3682b4125294a')
+
+build() {
+  cd "$srcdir"/emacs-26.1
+  ./configure --program-transform-name='s/^ctags$/ctags.emacs/' \
+              --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
+              --localstatedir=/var --without-all --with-x-toolkit=athena \
+              --with-modules --with-xft --with-libotf --with-m17n-flt \
+              --with-libsystemd --with-file-notification=yes \
+              --with-xml2 --with-json
+  make
+}
+
+package() {
+  cd "$srcdir"/emacs-26.1
+  make DESTDIR="$pkgdir" install
+  install -d "$pkgdir"/usr/lib/systemd/user/emacs.service.d
+  cp -r "$srcdir"/override.conf "$pkgdir"/usr/lib/systemd/user/emacs.service.d
+}

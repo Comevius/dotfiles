@@ -178,16 +178,13 @@
 	  ("M-r"     . org-capture)
 	  ("C-M-r"   . org-store-link)
 	  ("C-p"     . projectile-command-map)
-          ("C-S-n"   . move-text-down)
-	  ("C-S-e"   . move-text-up)
+          ("C-S-n"   . nil)
+	  ("C-S-e"   . nil)
 	  ("C-S-h"   . indent-rigidly-line-or-region-left-to-tab-stop)
 	  ("C-S-t"   . indent-rigidly-line-or-region-right-to-tab-stop)
 	  ("C-S-o"   . indent-rigidly-line-or-region-left)
 	  ("C-S-i"   . indent-rigidly-line-or-region-right)
 	  ("<C-tab>" . indent-relative)))
-
-(use-package move-text
-  :ensure t)
 
 (defun backward-kill-char-or-word ()
   (interactive)

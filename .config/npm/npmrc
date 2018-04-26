@@ -1,0 +1,4 @@
+prefix=${NPM_CONFIG_PREFIX}
+cache=${NPM_CONFIG_CACHE}
+tmp=${NPM_CONFIG_TMP}
+init-module=${NPM_CONFIG_INIT_MODULE}

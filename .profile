@@ -30,7 +30,6 @@ export IDEA_PROPERTIES=$XDG_CONFIG_HOME/idea.properties
 export CL_PROPERTIES=$XDG_CONFIG_HOME/clion.properties
 export STUDIO_PROPERTIES=$XDG_CONFIG_HOME/studio.properties
 export WEBIDE_PROPERTIES=$XDG_CONFIG_HOME/webstorm.properties
-export TASKRC=$XDG_CONFIG_HOME/task/taskrc
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export NPM_CONFIG_INIT_MODULE=$XDG_CONFIG_HOME/npm/npm-init.js
 
@@ -49,7 +48,6 @@ export GEM_HOME=$XDG_DATA_HOME/gem
 export ANDROID_SDK_HOME=$XDG_DATA_HOME/android
 export ANDROID_EMULATOR_HOME=$ANDROID_SDK_HOME
 export ANDROID_AVD_HOME=$ANDROID_SDK_HOME/avd
-export TASKDATA=$XDG_DATA_HOME/task
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
 export NPM_CONFIG_PREFIX=$XDG_DATA_HOME/npm
 

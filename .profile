@@ -31,6 +31,8 @@ export CL_PROPERTIES=$XDG_CONFIG_HOME/clion.properties
 export STUDIO_PROPERTIES=$XDG_CONFIG_HOME/studio.properties
 export WEBIDE_PROPERTIES=$XDG_CONFIG_HOME/webstorm.properties
 export TASKRC=$XDG_CONFIG_HOME/task/taskrc
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NPM_CONFIG_INIT_MODULE=$XDG_CONFIG_HOME/npm/npm-init.js
 
 # XDG_CACHE_HOME
 export __GL_SHADER_DISK_CACHE_PATH=$XDG_CACHE_HOME/nv
@@ -39,6 +41,7 @@ export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
 export BUNDLE_CACHE_PATH=$XDG_CACHE_HOME/bundle
 export PUB_CACHE=$XDG_CACHE_HOME/pub
 export _JAVA_OPTIONS="-Djava.io.tmpdir=${XDG_CACHE_HOME}/java"
+export NPM_CONFIG_CACHE=$XDG_CACHE_HOME/npm
 
 # XDG_DATA_HOME
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
@@ -47,10 +50,16 @@ export ANDROID_SDK_HOME=$XDG_DATA_HOME/android
 export ANDROID_EMULATOR_HOME=$ANDROID_SDK_HOME
 export ANDROID_AVD_HOME=$ANDROID_SDK_HOME/avd
 export TASKDATA=$XDG_DATA_HOME/task
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
+export NPM_CONFIG_PREFIX=$XDG_DATA_HOME/npm
 
 # XDG_RUNTIME_DIR
 export RXVT_SOCKET=$XDG_RUNTIME_DIR/urxvtd
 export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
+export NPM_CONFIG_TMP=$XDG_RUNTIME_DIR/npm
+
+# PATH
+export PATH=$PATH:$NPM_CONFIG_PREFIX/bin
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 

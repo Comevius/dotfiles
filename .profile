@@ -4,20 +4,7 @@ export TERMINAL=urxvtc
 export VISUAL='emacsclient -c'
 export BROWSER=firefox
 
-# Android
-export ANDROID_SDK_ROOT=$HOME/android
-export ANDROID_HOME=$ANDROID_SDK_ROOT
 export QEMU_AUDIO_DRV=none
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
-export SDKMANAGER_OPTS="--add-modules=java.xml.bind"
-
-# Flutter
-export FLUTTER_ROOT=$HOME/flutter
-export DART_SDK_PATH=$FLUTTER_ROOT/bin/cache/dart-sdk
-export PATH=$PATH:$FLUTTER_ROOT/bin:$DART_SDK_PATH/bin
-
 export NO_AT_BRIDGE=1
 
 # XDG
@@ -56,7 +43,20 @@ export RXVT_SOCKET=$XDG_RUNTIME_DIR/urxvtd
 export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
 export NPM_CONFIG_TMP=$XDG_RUNTIME_DIR/npm
 
+# Android
+export ANDROID_SDK_ROOT=$HOME/android
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export SDKMANAGER_OPTS="--add-modules=java.xml.bind"
+
+# Flutter
+export FLUTTER_ROOT=$HOME/flutter
+export DART_SDK_PATH=$FLUTTER_ROOT/bin/cache/dart-sdk
+
 # PATH
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$FLUTTER_ROOT/bin:$DART_SDK_PATH/bin
 export PATH=$PATH:$NPM_CONFIG_PREFIX/bin
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

@@ -5,6 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
  '(enable-local-variables :safe)
+ '(eshell-visual-commands
+   (quote
+    ("vi" "screen" "top" "less" "more" "mpv")))
  '(indent-tabs-mode nil)
  '(inhibit-startup-echo-area-message "comevius")
  '(inhibit-startup-screen t)

@@ -14,6 +14,7 @@
  '(initial-scratch-message nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
+ '(display-time-mode t)
  '(org-agenda-custom-commands
    (quote
     (("w" todo "WAITING"

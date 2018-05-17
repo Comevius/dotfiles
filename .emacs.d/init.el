@@ -186,6 +186,10 @@
 	  ("C-S-i"   . indent-rigidly-line-or-region-right)
 	  ("<C-tab>" . indent-relative)))
 
+(defadvice term-handle-exit
+  (after term-kill-buffer-on-exit activate)
+  (kill-buffer))
+
 (defun backward-kill-char-or-word ()
   (interactive)
   (cond

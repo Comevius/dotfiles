@@ -164,6 +164,22 @@
 	 ("C-k"          . org-kill-line)
 	 ("C-y"          . org-yank)))
 
+(use-package ibuffer
+  :init
+  (setq ibuffer-expert t
+        ibuffer-show-empty-filter-groups nil)
+  (setq ibuffer-saved-filter-groups
+        (quote (("default"
+                 ("dired" (mode . dired-mode))
+                 ("org" (mode . org-mode))
+                 ("magit" (mode . magit-mode))
+                 ("eshell" (mode . eshell-mode))
+                 ("exwm" (mode . exwm-mode))))))
+  (add-hook 'ibuffer-mode-hook
+            (lambda ()
+              (ibuffer-auto-mode 1)
+              (ibuffer-switch-to-saved-filter-groups "default"))))
+
 (use-package ivy
   :ensure t
   :config

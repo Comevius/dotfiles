@@ -22,6 +22,37 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package exwm
+  :ensure t
+  :init
+  (setq exwm-manage-configurations '((t char-mode t)))
+  (setq exwm-input-global-keys
+        `(([?\s-n]    . switch-to-next-buffer)
+          ([?\s-e]    . switch-to-prev-buffer)
+          ([?\s-o]    . windmove-left)
+          ([?\s-i]    . windmove-right)
+          ([?\s-0]    . delete-window)
+          ([?\s-1]    . delete-other-windows)
+          ([?\s-2]    . split-window-bellow)
+          ([?\s-3]    . split-window-right)
+          ([?\s-f]    . find-file)
+          ([?\s-b]    . switch-to-buffer)
+          ([?\s-q]    . kill-this-buffer)
+          ([?\s-z]    . save-buffers-kill-emacs)
+          ([?\s--]    . eshell)
+          ([?\s-=]    . nil)
+          ([?\s-\\]   . counsel-linux-app)
+          ([?\s-']    . org-cycle-agenda-files)
+          ([?\s-,]    . nil)
+          ([?\s-.]    . nil)
+          ([?\s-/]    . nil)))
+  (add-hook 'exwm-update-class-hook
+            (lambda ()
+              (exwm-workspace-rename-buffer exwm-class-name)))
+  (add-hook 'exwm-update-title-hook
+            (lambda ()
+              (exwm-workspace-rename-buffer exwm-title))))
+
 (use-package eshell
   :init
   ;; FIXME: What the hell!?

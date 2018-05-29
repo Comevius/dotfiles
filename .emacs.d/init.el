@@ -84,9 +84,6 @@
          ("I"   . magit-ediff-popup)
          (";"   . magit-gitignore)))
 
-(use-package projectile
-  :ensure t)
-
 (use-package flycheck
   :ensure t)
 
@@ -171,7 +168,7 @@
 	  ("C-r"     . org-agenda)
 	  ("M-r"     . org-capture)
 	  ("C-M-r"   . org-store-link)
-	  ("C-p"     . projectile-command-map)
+	  ("C-p"     . nil)
 	  ("<C-tab>" . indent-relative)
           ("<M-tab>" . indent-line-or-region)))
 

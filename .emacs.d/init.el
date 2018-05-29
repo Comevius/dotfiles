@@ -115,16 +115,12 @@
 	 ("C-t"          . org-end-of-line)
 	 ("M-h"          . org-backward-sentence)
 	 ("M-t"          . org-forward-sentence)
-	 ("C-M-h"        . org-backward-paragraph)
-	 ("C-M-t"        . org-forward-paragraph)
 	 ("M-S-n"        . org-metadown)
 	 ("M-S-e"        . org-metaup)
 	 ("M-S-o"        . org-metaleft)
 	 ("M-S-i"        . org-metaright)
 	 ("<C-return>"   . org-meta-return)
 	 ("<M-return>"   . org-insert-heading-respect-content)
-	 ("C-a"          . nil)
-	 ("M-a"          . nil)
 	 ("C-k"          . org-kill-line)
 	 ("C-y"          . org-yank)))
 
@@ -138,6 +134,7 @@
          ("E"   . nil)
          ("N"   . nil)
          ("p"   . magit-push-popup)
+         ("P"   . nil)
          ("i"   . magit-ediff-dwim)
          ("I"   . magit-ediff-popup)
          (";"   . magit-gitignore)))
@@ -159,8 +156,12 @@
   :config
   (ivy-mode 1)
   :bind (:map ivy-minibuffer-map
-	 ("C-d"   . ivy-backward-kill-word)
-	 ("C-k"   . ivy-kill-line)))
+              ("C-n"   . ivy-next-line)
+              ("C-e"   . ivy-previous-line)
+              ("C-o"   . nil)
+              ("C-i"   . ivy-forward-char)
+	      ("C-d"   . ivy-backward-kill-word)
+	      ("C-k"   . ivy-kill-whole-line)))
 
 (use-package swiper
   :ensure t)

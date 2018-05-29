@@ -184,7 +184,8 @@
 	  ("C-S-t"   . indent-rigidly-line-or-region-right-to-tab-stop)
 	  ("C-S-o"   . indent-rigidly-line-or-region-left)
 	  ("C-S-i"   . indent-rigidly-line-or-region-right)
-	  ("<C-tab>" . indent-relative)))
+	  ("<C-tab>" . indent-relative)
+          ("<M-tab>" . indent-line-or-region)))
 
 (defadvice term-handle-exit
   (after term-kill-buffer-on-exit activate)
@@ -215,6 +216,11 @@
   (if (use-region-p)
       (cons (region-beginning) (region-end))
     (cons (line-beginning-position) (line-end-position))))
+
+(defun indent-line-or-region ()
+  (interactive)
+  (let ((current-region (line-or-region)))
+    (indent-region (car current-region) (cdr current-region))))
 
 (defun indent-rigidly-line-or-region (arg)
   (interactive)

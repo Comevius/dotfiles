@@ -110,18 +110,12 @@
 	 ("M-]"   . ivy-scroll-down-command)
          ("C-M-[" . ivy-end-of-buffer)
 	 ("C-M-]" . ivy-beginning-of-buffer)
-	 ("C-a"   . swiper-avy)
 	 ("C-d"   . ivy-backward-kill-word)
 	 ("C-m"   . ivy-done)
 	 ("C-l"   . ivy-kill-line)))
 
 (use-package swiper
   :ensure t)
-
-(use-package avy
-  :ensure t
-  :init
-  (setq avy-keys '(?n ?e ?k ?l ?u ?p ?y ?f ?b ?g ?t ?h ?m ?c ?r ?d)))
 
 (use-package bind-key
   :init
@@ -159,9 +153,6 @@
 	  ("M-b"     . kill-buffer)
 	  ("C-M-b"   . kill-matching-buffers)
 	  ("C-s"     . swiper)
-	  ("C-a"     . avy-goto-char-timer)
-	  ("M-a"     . avy-goto-word-1)
-	  ("C-M-a"   . avy-goto-line)
 	  ("C-a"     . nil)
 	  ("M-a"     . nil)
 	  ("C-M-a"   . nil)

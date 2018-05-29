@@ -124,13 +124,13 @@
   :ensure t
   :init
   (add-hook 'after-make-frame-functions
-    (lambda (frame)
-      (with-selected-frame frame
-        (unless (custom-theme-p 'leuven)
-          (load-theme 'leuven t)))))
+            (lambda (frame)
+              (with-selected-frame frame
+                (unless (custom-theme-p 'leuven)
+                  (load-theme 'leuven t)))))
   :config
   (custom-theme-set-faces 'leuven
-    '(whitespace-line ((t (:background "white smoke"))))))
+                          '(whitespace-line ((t (:background "white smoke"))))))
 
 (use-package whitespace
   :init
@@ -147,22 +147,22 @@
   :config
   (add-to-list 'org-modules 'org-habit)
   :bind (:map org-mode-map
-	 ("C-n"          . nil)
-         ("C-e"          . nil)
-         ("M-n"          . org-forward-element)
-	 ("M-e"          . org-backward-element)
-	 ("C-h"          . org-beginning-of-line)
-	 ("C-t"          . org-end-of-line)
-	 ("M-h"          . org-backward-sentence)
-	 ("M-t"          . org-forward-sentence)
-	 ("M-S-n"        . org-metadown)
-	 ("M-S-e"        . org-metaup)
-	 ("M-S-o"        . org-metaleft)
-	 ("M-S-i"        . org-metaright)
-	 ("<C-return>"   . org-meta-return)
-	 ("<M-return>"   . org-insert-heading-respect-content)
-	 ("C-k"          . org-kill-line)
-	 ("C-y"          . org-yank)))
+	      ("C-n"          . nil)
+              ("C-e"          . nil)
+              ("M-n"          . org-forward-element)
+	      ("M-e"          . org-backward-element)
+	      ("C-h"          . org-beginning-of-line)
+	      ("C-t"          . org-end-of-line)
+	      ("M-h"          . org-backward-sentence)
+	      ("M-t"          . org-forward-sentence)
+	      ("M-S-n"        . org-metadown)
+	      ("M-S-e"        . org-metaup)
+	      ("M-S-o"        . org-metaleft)
+	      ("M-S-i"        . org-metaright)
+	      ("<C-return>"   . org-meta-return)
+	      ("<M-return>"   . org-insert-heading-respect-content)
+	      ("C-k"          . org-kill-line)
+	      ("C-y"          . org-yank)))
 
 (use-package ibuffer
   :init
@@ -203,17 +203,17 @@
 (use-package magit
   :ensure t
   :bind (:map magit-mode-map
-         ("n"   . magit-section-forward)
-         ("e"   . magit-section-backward)
-         ("C-n" . magit-section-forward-sibling)
-         ("C-e" . magit-section-backward-sibling)
-         ("E"   . nil)
-         ("N"   . nil)
-         ("p"   . magit-push-popup)
-         ("P"   . nil)
-         ("i"   . magit-ediff-dwim)
-         ("I"   . magit-ediff-popup)
-         (";"   . magit-gitignore)))
+              ("n"   . magit-section-forward)
+              ("e"   . magit-section-backward)
+              ("C-n" . magit-section-forward-sibling)
+              ("C-e" . magit-section-backward-sibling)
+              ("E"   . nil)
+              ("N"   . nil)
+              ("p"   . magit-push-popup)
+              ("P"   . nil)
+              ("i"   . magit-ediff-dwim)
+              ("I"   . magit-ediff-popup)
+              (";"   . magit-gitignore)))
 
 (use-package flycheck
   :ensure t)
@@ -225,10 +225,10 @@
         dart-enable-analysis-server t
         dart-debug nil)
   :bind (:map dart-mode-map
-         ("C-i" . nil)))
+              ("C-i" . nil)))
 
 (defadvice term-handle-exit
-  (after term-kill-buffer-on-exit activate)
+    (after term-kill-buffer-on-exit activate)
   (kill-buffer))
 
 (defun backward-kill-char-or-word ()
@@ -237,7 +237,7 @@
    ((looking-back (rx (char word)) 1)
     (backward-kill-word 1))
    ((looking-back (rx (char blank)) 1)
-     (delete-horizontal-space t))
+    (delete-horizontal-space t))
    (t
     (backward-delete-char 1))))
 

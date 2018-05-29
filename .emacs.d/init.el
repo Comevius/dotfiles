@@ -159,15 +159,8 @@
   :config
   (ivy-mode 1)
   :bind (:map ivy-minibuffer-map
-	 ("C-n"   . ivy-next-line)
-	 ("C-e"   . ivy-previous-line)
-	 ("M-["   . ivy-scroll-up-command)
-	 ("M-]"   . ivy-scroll-down-command)
-         ("C-M-[" . ivy-end-of-buffer)
-	 ("C-M-]" . ivy-beginning-of-buffer)
 	 ("C-d"   . ivy-backward-kill-word)
-	 ("C-m"   . ivy-done)
-	 ("C-l"   . ivy-kill-line)))
+	 ("C-k"   . ivy-kill-line)))
 
 (use-package swiper
   :ensure t)

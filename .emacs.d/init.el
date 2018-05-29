@@ -40,12 +40,9 @@
           ([?\s-q]    . kill-this-buffer)
           ([?\s-z]    . save-buffers-kill-emacs)
           ([?\s--]    . eshell)
-          ([?\s-=]    . nil)
+          ([?\s-=]    . firefox)
           ([?\s-\\]   . counsel-linux-app)
           ([?\s-']    . org-cycle-agenda-files)
-          ([?\s-,]    . nil)
-          ([?\s-.]    . nil)
-          ([?\s-/]    . nil)))
           ([?\s-,]    . pulseaudio-volume-down)
           ([?\s-.]    . pulseaudio-volume-up)
           ([?\s-/]    . pulseaudio-mute)))
@@ -233,6 +230,20 @@
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
   (kill-buffer))
+
+(defun firefox ()
+  (interactive)
+  (let ((firefox-buffer (get--exwm-buffer "Firefox")))
+    (if firefox-buffer
+        (switch-to-buffer firefox-buffer)
+      (start-process "" nil "/usr/bin/firefox"))))
+
+(defun get--exwm-buffer (class-name)
+  (let ((buffers (buffer-list (current-buffer))))
+    (while (and buffers (with-current-buffer (car buffers)
+                          (not (equal exwm-class-name class-name))))
+      (setq buffers (cdr buffers)))
+    (car buffers)))
 
 (defun pulseaudio-volume-up ()
   (interactive)

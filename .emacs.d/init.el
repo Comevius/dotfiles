@@ -38,6 +38,8 @@
           ([?\s-f]    . find-file)
           ([?\s-b]    . switch-to-buffer)
           ([?\s-q]    . kill-this-buffer)
+          ([?\s-x]    . execute-extended-command)
+          ([?\s-r]    . exwm-reset)
           ([?\s-z]    . save-buffers-kill-emacs)
           ([?\s--]    . eshell)
           ([?\s-=]    . firefox)

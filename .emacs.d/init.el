@@ -190,7 +190,6 @@
               ("C-n"   . ivy-next-line)
               ("C-e"   . ivy-previous-line)
               ("C-o"   . nil)
-              ("C-i"   . ivy-forward-char)
 	      ("C-d"   . ivy-backward-kill-word)
 	      ("C-k"   . ivy-kill-whole-line)))
 

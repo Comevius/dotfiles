@@ -126,6 +126,21 @@
 	 ("C-k"          . org-kill-line)
 	 ("C-y"          . org-yank)))
 
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1)
+  :bind (:map ivy-minibuffer-map
+              ("C-n"   . ivy-next-line)
+              ("C-e"   . ivy-previous-line)
+              ("C-o"   . nil)
+              ("C-i"   . ivy-forward-char)
+	      ("C-d"   . ivy-backward-kill-word)
+	      ("C-k"   . ivy-kill-whole-line)))
+
+(use-package swiper
+  :ensure t)
+
 (use-package magit
   :ensure t
   :bind (:map magit-mode-map
@@ -152,21 +167,6 @@
         dart-debug nil)
   :bind (:map dart-mode-map
          ("C-i" . nil)))
-
-(use-package ivy
-  :ensure t
-  :config
-  (ivy-mode 1)
-  :bind (:map ivy-minibuffer-map
-              ("C-n"   . ivy-next-line)
-              ("C-e"   . ivy-previous-line)
-              ("C-o"   . nil)
-              ("C-i"   . ivy-forward-char)
-	      ("C-d"   . ivy-backward-kill-word)
-	      ("C-k"   . ivy-kill-whole-line)))
-
-(use-package swiper
-  :ensure t)
 
 (defadvice term-handle-exit
   (after term-kill-buffer-on-exit activate)

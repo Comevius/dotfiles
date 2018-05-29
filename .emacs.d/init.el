@@ -22,6 +22,13 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package eshell
+  :init
+  ;; FIXME: What the hell!?
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point))))
+
 (use-package bind-key
   :bind  (("C-n"     . next-line)
           ("C-e"     . previous-line)

@@ -46,6 +46,9 @@
           ([?\s-,]    . nil)
           ([?\s-.]    . nil)
           ([?\s-/]    . nil)))
+          ([?\s-,]    . pulseaudio-volume-down)
+          ([?\s-.]    . pulseaudio-volume-up)
+          ([?\s-/]    . pulseaudio-mute)))
   (add-hook 'exwm-update-class-hook
             (lambda ()
               (exwm-workspace-rename-buffer exwm-class-name)))
@@ -230,6 +233,21 @@
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
   (kill-buffer))
+
+(defun pulseaudio-volume-up ()
+  (interactive)
+  (let ((process-connection-type nil))
+    (start-process "" nil "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%")))
+
+(defun pulseaudio-volume-down ()
+  (interactive)
+  (let ((process-connection-type nil))
+    (start-process "" nil "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%")))
+
+(defun pulseaudio-mute ()
+  (interactive)
+  (let ((process-connecction-type nil))
+    (start-process "" nil "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle")))
 
 (defun backward-kill-char-or-word ()
   (interactive)

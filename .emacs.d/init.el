@@ -61,6 +61,8 @@
           ("M-j"     . nil)
           ("C-p"     . nil)
           ("M-p"     . nil)
+          ("C-z"     . nil)
+          ("M-z"     . nil)
 	  ("C-k"     . kill-whole-line-or-region)
 	  ("M-k"     . copy-whole-line-or-region)
           ("C-;"     . comment-or-uncomment-line-or-region)

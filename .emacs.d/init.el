@@ -172,12 +172,6 @@
 	  ("M-r"     . org-capture)
 	  ("C-M-r"   . org-store-link)
 	  ("C-p"     . projectile-command-map)
-          ("C-S-n"   . nil)
-	  ("C-S-e"   . nil)
-	  ("C-S-h"   . indent-rigidly-line-or-region-left-to-tab-stop)
-	  ("C-S-t"   . indent-rigidly-line-or-region-right-to-tab-stop)
-	  ("C-S-o"   . indent-rigidly-line-or-region-left)
-	  ("C-S-i"   . indent-rigidly-line-or-region-right)
 	  ("<C-tab>" . indent-relative)
           ("<M-tab>" . indent-line-or-region)))
 
@@ -215,28 +209,6 @@
   (interactive)
   (let ((current-region (line-or-region)))
     (indent-region (car current-region) (cdr current-region))))
-
-(defun indent-rigidly-line-or-region (arg)
-  (interactive)
-  (let ((current-region (line-or-region)))
-    (indent-rigidly (car current-region) (cdr current-region) arg))
-  (setq deactivate-mark nil))
-
-(defun indent-rigidly-line-or-region-left ()
-  (interactive)
-  (indent-rigidly-line-or-region -1))
-
-(defun indent-rigidly-line-or-region-right ()
-  (interactive)
-  (indent-rigidly-line-or-region 1))
-
-(defun indent-rigidly-line-or-region-right-to-tab-stop ()
-  (interactive)
-  (indent-rigidly-line-or-region (indent-next-tab-stop 0)))
-
-(defun indent-rigidly-line-or-region-left-to-tab-stop ()
-  (interactive)
-  (indent-rigidly-line-or-region (indent-next-tab-stop 0 t)))
 
 (defun kill-whole-line-or-region ()
   (interactive)

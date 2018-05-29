@@ -36,16 +36,16 @@
 
 (use-package whitespace
   :init
-  (setq whitespace-style '(face empty tabs lines-tail trailing))
-  (setq whitespace-line-column 80)
+  (setq whitespace-line-column 80
+        whitespace-style '(face empty tabs lines-tail trailing))
   :config
   (global-whitespace-mode t))
 
 (use-package org
   :init
-  (setq org-catch-invisible-edits 'error)
-  (setq org-M-RET-may-split-line nil)
-  (setq org-cycle-separator-lines 1)
+  (setq org-catch-invisible-edits 'error
+        org-M-RET-may-split-line nil
+        org-cycle-separator-lines 1)
   :config
   (add-to-list 'org-modules 'org-habit)
   :bind (:map org-mode-map
@@ -90,9 +90,9 @@
 (use-package dart-mode
   :ensure t
   :init
-  (setq dart-sdk-path (getenv "DART_SDK_PATH"))
-  (setq dart-enable-analysis-server t)
-  (setq dart-debug nil)
+  (setq dart-sdk-path (getenv "DART_SDK_PATH")
+        dart-enable-analysis-server t
+        dart-debug nil)
   :bind (:map dart-mode-map
          ("C-i" . nil)))
 

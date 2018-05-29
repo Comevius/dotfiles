@@ -1,24 +1,26 @@
 pkgname=emacs
-pkgver=26.0.99
-pkgrel=2
+pkgver=26.1
+pkgrel=1
 pkgdesc="Emacs text editor"
 arch=('x86_64')
 url="http://www.gnu.org/software/emacs/emacs.html"
 license=('GPL3')
+conflicts=('emacs')
 depends=('m17n-lib' 'libotf' 'gnutls' 'jansson' 'libxml2' 'libsystemd')
-source=("https://alpha.gnu.org/gnu/emacs/pretest/emacs-26.1-rc1.tar.xz"
+source=("ftp://ftp.gnu.org/gnu/emacs/${pkgname}-${pkgver}.tar.xz"
         "override.conf")
-sha256sums=('6594e668de00b96e73ad4f168c897fe4bca7c55a4caf19ee20eac54b62a05758'
-            '0d8c7f4ba589e26df50b9a21025dee13838924e10cbca4acbff3682b4125294a')
+sha256sums=('1cf4fc240cd77c25309d15e18593789c8dbfba5c2b44d8f77c886542300fd32c'
+            '4f25a05a1f471f93cea3744a20d88758aa66af5bb582b4f5ca829b2e494fbf9b')
 
 build() {
   cd "$srcdir"/emacs-26.1
   ./configure --program-transform-name='s/^ctags$/ctags.emacs/' \
               --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
               --localstatedir=/var --without-all --with-x-toolkit=no \
-              --with-modules --with-libsystemd --with-file-notification=yes \
+              --with-modules --with-threads \
+              --with-libsystemd --with-dbus --with-file-notification=yes \
               --with-xft --with-libotf --with-m17n-flt \
-              --with-xml2 --with-json
+              --with-xml2 --with-json --with-gnutls
   make
 }
 

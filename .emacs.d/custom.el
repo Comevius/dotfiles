@@ -4,17 +4,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
+ '(display-time-mode t)
  '(enable-local-variables :safe)
- '(eshell-visual-commands
-   (quote
-    ("vi" "screen" "top" "less" "more" "mpv")))
+ '(enable-recursive-minibuffers t)
+ '(eshell-visual-commands (quote ("screen" "top" "less" "more" "mpv")))
+ '(focus-follows-mouse t)
+ '(fringe-mode 4 nil (fringe))
  '(indent-tabs-mode nil)
  '(inhibit-startup-echo-area-message "comevius")
  '(inhibit-startup-screen t)
+ '(initial-buffer-choice (quote eshell))
+ '(initial-major-mode (quote org-mode))
  '(initial-scratch-message nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(display-time-mode t)
+ '(mouse-autoselect-window t)
+ '(next-line-add-newlines t)
  '(org-agenda-custom-commands
    (quote
     (("w" todo "WAITING"
@@ -58,7 +63,7 @@
      ("~/Agenda/someday.org" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (ivy flycheck projectile use-package swiper org magit leuven-theme dart-mode avy)))
+    (exwm counsel ivy flycheck use-package swiper org magit leuven-theme dart-mode)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tool-bar-mode nil)

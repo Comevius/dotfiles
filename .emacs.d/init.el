@@ -210,6 +210,8 @@
 
 (use-package magit
   :ensure t
+  :init
+  (setq magit-bury-buffer-function 'kill-magit-buffers)
   :bind (:map magit-mode-map
               ("n"   . magit-section-forward)
               ("e"   . magit-section-backward)
@@ -238,6 +240,11 @@
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
   (kill-buffer))
+
+(defun kill-magit-buffers (x)
+  (let ((magit-buffers (magit-mode-get-buffers)))
+    (magit-restore-window-configuration)
+    (mapc 'kill-buffer magit-buffers)))
 
 (defun firefox ()
   (interactive)

@@ -194,9 +194,7 @@
 	      ("C-k"   . ivy-kill-whole-line)))
 
 (use-package counsel
-  :ensure t
-  :config
-  (counsel-mode 1))
+  :ensure t)
 
 (use-package swiper
   :ensure t)

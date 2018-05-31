@@ -184,6 +184,8 @@
 
 (use-package ivy
   :ensure t
+  :init
+  (setq ivy-display-functions-alist nil)
   :config
   (ivy-mode 1)
   :bind (:map ivy-minibuffer-map

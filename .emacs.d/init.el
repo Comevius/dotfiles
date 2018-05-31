@@ -57,6 +57,13 @@
 
 (use-package eshell
   :init
+  (setq eshell-scroll-to-bottom-on-input 'this
+        eshell-list-files-after-cd t
+        eshell-ls-initial-args "-alh"
+        eshell-banner-message ""
+        eshell-cmpl-ignore-case t
+        eshell-show-lisp-alternatives nil
+        eshell-cmpl-cycle-cutoff-length 3)
   ;; FIXME: What the hell!?
   (add-hook 'eshell-mode-hook
             (lambda ()

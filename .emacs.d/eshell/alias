@@ -1,17 +1,13 @@
 alias d dired $1
-alias e find-file $1
+alias f find-file $1
+alias e (eshell 'N)
 alias pacu sudo pacman -Syu $*
 alias paci sudo pacman -S $*
 alias pacr sudo pacman -Rsn $*
 alias pacq sudo pacman -Q $*
-alias tar tar -avcf $*
-alias untar tar -avxf $*
 alias mount udisksctl mount -b $*
 alias umount udisksctl unmount -b $*
-alias loop udisksctl loop-setup -f $*
-alias unloop udisksctl loop-delete -b $*
 alias free free -m
-alias ls ls -lAh
 alias rm *rm $*
 alias cp *cp $*
 alias mv *mv $*

@@ -62,5 +62,5 @@ export PATH="$PATH:$NPM_CONFIG_PREFIX/bin"
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec xinit -- /usr/bin/Xorg -nolisten tcp "$@" vt1
+    exec xinit -- /usr/bin/Xorg -nolisten tcp -nolisten local "$@" vt1
 fi

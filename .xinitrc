@@ -2,8 +2,6 @@
 
 userresources=$XDG_CONFIG_HOME/X11/Xresources
 
-# merge in defaults and keymaps
-
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
 fi
@@ -21,5 +19,4 @@ export GTK_IM_MODULE='ibus'
 export QT_IM_MODULE='ibus'
 export XMODIFIERS='@im=ibus'
 
-urxvtd -q -o -f
-exec i3
+exec dbus-launch --exit-with-session emacs -f exwm-enable

@@ -153,8 +153,12 @@
   (setq org-catch-invisible-edits 'error
         org-M-RET-may-split-line nil
         org-cycle-separator-lines 1)
-  :config
-  (add-to-list 'org-modules 'org-habit)
+  (org-clock-persistence-insinuate)
+  (setq org-clock-persist t
+        org-clock-in-resume t
+        org-clock-persist-query-resume t
+        org-clock-out-remove-zero-time-clocks t
+        org-clock-report-include-clocking-task t)
   :bind (:map org-mode-map
 	      ("C-n"          . nil)
               ("C-e"          . nil)

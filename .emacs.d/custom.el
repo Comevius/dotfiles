@@ -7,6 +7,7 @@
  '(display-time-mode t)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)
+ '(epa-pinentry-mode 'loopback)
  '(eshell-visual-commands (quote ("screen" "top" "less" "more" "mpv")))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))

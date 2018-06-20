@@ -46,7 +46,6 @@ export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 # Android
 export ANDROID_SDK_ROOT="$HOME/android"
 export ANDROID_HOME="$ANDROID_SDK_ROOT"
-export SDKMANAGER_OPTS="--add-modules=java.xml.bind"
 
 # Flutter
 export FLUTTER_ROOT="$HOME/flutter"

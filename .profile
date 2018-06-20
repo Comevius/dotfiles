@@ -41,7 +41,6 @@ export NPM_CONFIG_PREFIX="$XDG_DATA_HOME/npm"
 
 # XDG_RUNTIME_DIR
 export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 
 # Android

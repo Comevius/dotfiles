@@ -6,6 +6,7 @@ export BROWSER="firefox"
 
 export QEMU_AUDIO_DRV="none"
 export NO_AT_BRIDGE="1"
+export _JAVA_AWT_WM_NONREPARENTING="1"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -40,13 +41,11 @@ export NPM_CONFIG_PREFIX="$XDG_DATA_HOME/npm"
 
 # XDG_RUNTIME_DIR
 export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 
 # Android
 export ANDROID_SDK_ROOT="$HOME/android"
 export ANDROID_HOME="$ANDROID_SDK_ROOT"
-export SDKMANAGER_OPTS="--add-modules=java.xml.bind"
 
 # Flutter
 export FLUTTER_ROOT="$HOME/flutter"

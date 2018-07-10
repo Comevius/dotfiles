@@ -9,6 +9,3 @@ alias pacq sudo pacman -Q $*
 alias mount udisksctl mount -b $*
 alias umount udisksctl unmount -b $*
 alias free free -m
-alias rm *rm $*
-alias cp *cp $*
-alias mv *mv $*

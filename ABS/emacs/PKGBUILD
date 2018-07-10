@@ -10,7 +10,7 @@ depends=('m17n-lib' 'libotf' 'gnutls' 'jansson' 'libxml2' 'libsystemd')
 source=("ftp://ftp.gnu.org/gnu/emacs/${pkgname}-${pkgver}.tar.xz"
         "override.conf")
 sha256sums=('1cf4fc240cd77c25309d15e18593789c8dbfba5c2b44d8f77c886542300fd32c'
-            '4f25a05a1f471f93cea3744a20d88758aa66af5bb582b4f5ca829b2e494fbf9b')
+            '7791d64f508309478c2d7b85b577303e829296c5f11d824cc4cf6bb89321f90f')
 
 build() {
   cd "$srcdir"/emacs-26.1

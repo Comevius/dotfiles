@@ -4,6 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
+ '(display-time-24hr-format t)
+ '(display-time-day-and-date t)
  '(display-time-mode t)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)

@@ -9,7 +9,6 @@
  '(display-time-mode t)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)
- '(epa-pinentry-mode 'loopback)
  '(eshell-visual-commands (quote ("screen" "top" "less" "more" "mpv")))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))
@@ -66,7 +65,7 @@
      ("~/Agenda/someday.org" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (exwm counsel ivy flycheck use-package swiper org magit leuven-theme dart-mode)))
+    (pinentry exwm counsel ivy flycheck use-package swiper org magit leuven-theme dart-mode)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tool-bar-mode nil)

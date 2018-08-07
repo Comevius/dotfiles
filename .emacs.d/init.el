@@ -69,6 +69,11 @@
             (lambda ()
               (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point))))
 
+(use-package pinentry
+  :ensure t
+  :config
+  (pinentry-start))
+
 (use-package tramp
   :config
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path))

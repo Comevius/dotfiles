@@ -69,6 +69,7 @@
     (pinentry exwm counsel ivy flycheck use-package swiper org magit leuven-theme dart-mode)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
+ '(tab-width 2)
  '(tool-bar-mode nil)
  '(truncate-lines nil))
 (custom-set-faces

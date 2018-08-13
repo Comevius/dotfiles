@@ -255,10 +255,12 @@
 
 (use-package dart-mode
   :ensure t
+  :pin melpa
   :init
-  (setq dart-sdk-path (getenv "DART_SDK_PATH")
+  (setq dart-sdk-path (file-name-as-directory (getenv "DART_SDK_PATH"))
         dart-enable-analysis-server t
         dart-debug nil)
+  (add-hook 'dart-mode-hook 'flycheck-mode)
   :bind (:map dart-mode-map
               ("C-i" . nil)))
 

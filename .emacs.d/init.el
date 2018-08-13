@@ -79,12 +79,14 @@
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
 
 (use-package bind-key
+  :init
+  (define-key input-decode-map [?\C-i] [C-i])
   :bind  (("C-n"     . next-line)
           ("C-e"     . previous-line)
           ("M-n"     . forward-paragraph)
 	        ("M-e"     . backward-paragraph)
           ("C-o"     . backward-char)
-	        ("C-i"     . forward-char)
+	        ("<C-i>"   . forward-char)
 	        ("M-o"     . backward-sexp)
 	        ("M-i"     . forward-sexp)
           ("C-h"     . beginning-of-indentation-or-line)
@@ -172,7 +174,7 @@
               ("C-n"          . nil)
               ("C-e"          . nil)
               ("C-o"          . nil)
-              ("C-i"          . nil)
+              ("<C-i>"        . nil)
               ("M-n"          . org-forward-element)
               ("M-e"          . org-backward-element)
               ("M-o"          . nil)
@@ -260,9 +262,7 @@
   (setq dart-sdk-path (file-name-as-directory (getenv "DART_SDK_PATH"))
         dart-enable-analysis-server t
         dart-debug nil)
-  (add-hook 'dart-mode-hook 'flycheck-mode)
-  :bind (:map dart-mode-map
-              ("C-i" . nil)))
+  (add-hook 'dart-mode-hook 'flycheck-mode))
 
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)

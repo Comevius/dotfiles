@@ -17,5 +17,5 @@ alias sshf-adb sshf 5037
 alias fr flutter run --observatory-port 8100
 alias vgle vglconnect -e $1 other
 alias vglr vglconnect -e "vglrun $1" other
-alias avd vglr "emulator -gpu host avd $1"
+alias avd vglr "emulator -gpu host -avd $1"
 alias avds vgle "emulator -list-avds"

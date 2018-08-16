@@ -8,6 +8,7 @@ alias pacr sudo pacman -Rsn $*
 alias pacq sudo pacman -Q $*
 alias mount udisksctl mount -b $*
 alias umount udisksctl unmount -b $*
+alias untar tar -xf $*
 alias du du -h $*
 alias df df -h $*
 alias free free -m

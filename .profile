@@ -7,6 +7,7 @@ export BROWSER="firefox"
 export QEMU_AUDIO_DRV="none"
 export NO_AT_BRIDGE="1"
 export _JAVA_AWT_WM_NONREPARENTING="1"
+export WINEDEBUG="-all"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"

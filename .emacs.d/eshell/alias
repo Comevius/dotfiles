@@ -13,8 +13,8 @@ alias du du -h $*
 alias df df -h $*
 alias free free -m
 alias sshf ssh -NfL $1:localhost:$1 other
-alias sshf-adb sshf 5037
-alias fr flutter run --observatory-port 8100
+alias sshf-adb adb kill-server;sshf 5037;sshf 8100
+alias flur flutter run --observatory-port 8100
 alias vgle vglconnect -e $1 other
 alias vglr vglconnect -e "vglrun $1" other
 alias avd vglr "emulator -gpu host -avd $1"

@@ -262,7 +262,9 @@
   (setq dart-sdk-path (file-name-as-directory (getenv "DART_SDK_PATH"))
         dart-enable-analysis-server t
         dart-debug nil)
-  (add-hook 'dart-mode-hook 'flycheck-mode))
+  (add-hook 'dart-mode-hook 'flycheck-mode)
+  (add-hook 'dart-mode-hook
+            (lambda () (add-hook 'after-save-hook 'dart-format nil t))))
 
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)

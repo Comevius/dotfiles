@@ -264,7 +264,7 @@
         dart-debug nil)
   (add-hook 'dart-mode-hook 'flycheck-mode)
   (add-hook 'dart-mode-hook
-            (lambda () (add-hook 'after-save-hook 'dart-format nil t))))
+            (lambda () (add-hook 'before-save-hook 'dart-format nil t))))
 
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)

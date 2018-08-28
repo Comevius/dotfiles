@@ -12,8 +12,9 @@ alias untar tar -xf $*
 alias du du -h $*
 alias df df -h $*
 alias free free -m
-alias sshf ssh -NfL $1:localhost:$1 other
-alias sshf-adb adb kill-server;sshf 5037;sshf 8100
+alias sshl ssh -NfL $1:localhost:$1 other
+alias sshr ssh -NfR $1:localhost:$1 other
+alias ssh-adb adb kill-server;sshl 5037;sshl 8100;sshr 27183
 alias flur flutter run --observatory-port 8100
 alias vgle vglconnect -e $1 other
 alias vglr vglconnect -e "vglrun $1" other

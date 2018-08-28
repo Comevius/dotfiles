@@ -72,6 +72,7 @@
  '(tab-stop-list (number-sequence 2 120 2))
  '(tab-width 2)
  '(tool-bar-mode nil)
+ '(tooltip-mode nil)
  '(truncate-lines nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -69,7 +69,7 @@
      ("~/Agenda/someday.org" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (pinentry exwm counsel ivy flycheck use-package swiper org magit leuven-theme dart-mode)))
+    (eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

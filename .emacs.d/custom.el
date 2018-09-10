@@ -7,6 +7,7 @@
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-mode t)
+ '(eldoc-echo-area-use-multiline-p nil)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)
  '(eshell-visual-commands

@@ -8,6 +8,7 @@ export QEMU_AUDIO_DRV="none"
 export NO_AT_BRIDGE="1"
 export _JAVA_AWT_WM_NONREPARENTING="1"
 export WINEDEBUG="-all"
+export __GL_THREADED_OPTIMIZATIONS="1"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"

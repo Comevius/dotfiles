@@ -2,6 +2,9 @@ alias d dired $1
 alias f find-file $1
 alias e (eshell 'N)
 alias t (ansi-term "/bin/sh")
+alias r /bin/rm -rI $*
+alias c /bin/cp $*
+alias m /bin/mv $*
 alias pacu sudo pacman -Syu $*
 alias paci sudo pacman -S $*
 alias pacr sudo pacman -Rsn $*

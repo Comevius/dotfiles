@@ -7,9 +7,12 @@
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-mode t)
+ '(eldoc-echo-area-use-multiline-p nil)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)
- '(eshell-visual-commands (quote ("screen" "top" "less" "more" "mpv" "vglconnect")))
+ '(eshell-visual-commands
+   (quote
+    ("screen" "top" "less" "more" "mpv" "vglconnect" "scrcpy")))
  '(eshell-visual-subcommands (quote (("flutter" "run"))))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))
@@ -66,7 +69,7 @@
      ("~/Agenda/someday.org" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (pinentry exwm counsel ivy flycheck use-package swiper org magit leuven-theme dart-mode)))
+    (eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

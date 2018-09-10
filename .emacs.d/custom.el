@@ -9,7 +9,9 @@
  '(display-time-mode t)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)
- '(eshell-visual-commands (quote ("screen" "top" "less" "more" "mpv" "vglconnect")))
+ '(eshell-visual-commands
+   (quote
+    ("screen" "top" "less" "more" "mpv" "vglconnect" "scrcpy")))
  '(eshell-visual-subcommands (quote (("flutter" "run"))))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))

@@ -25,6 +25,7 @@
 (use-package exwm
   :ensure t
   :init
+  (setq exwm-workspace-number 2)
   (setq exwm-manage-configurations '((t char-mode t)))
   (setq exwm-input-global-keys
         `(([?\s-n]    . switch-to-next-buffer)

@@ -9,6 +9,7 @@ alias pacu sudo pacman -Syu $*
 alias paci sudo pacman -S $*
 alias pacr sudo pacman -Rsn $*
 alias pacq sudo pacman -Q $*
+alias pacc sudo pacman -Scc $*
 alias mount udisksctl mount -b $*
 alias umount udisksctl unmount -b $*
 alias untar tar -xf $*
@@ -17,9 +18,6 @@ alias df df -h $*
 alias free free -m
 alias sshl ssh -NfL $1:localhost:$1 other
 alias sshr ssh -NfR $1:localhost:$1 other
-alias ssh-adb adb kill-server;sshl 5037;sshl 8100;sshr 27183
 alias flur flutter run --observatory-port 8100
-alias vgle vglconnect -e $1 other
-alias vglr vglconnect -e "vglrun $1" other
-alias avd vglr "emulator -gpu host -avd $1"
-alias avds vgle "emulator -list-avds"
+alias avd emulator -gpu host -avd $1
+alias avds emulator -list-avds

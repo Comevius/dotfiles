@@ -253,19 +253,20 @@
               ("I"   . magit-ediff-popup)
               (";"   . magit-gitignore)))
 
-(use-package flycheck
-  :ensure t)
+(use-package eglot
+  :ensure t
+  :config
+  (add-to-list 'eglot-server-programs '(dart-mode . ("dart_language_server"))))
 
 (use-package dart-mode
   :ensure t
   :pin melpa
   :init
   (setq dart-sdk-path (file-name-as-directory (getenv "DART_SDK_PATH"))
-        dart-enable-analysis-server t
-        dart-debug nil)
-  (add-hook 'dart-mode-hook 'flycheck-mode)
-  (add-hook 'dart-mode-hook
-            (lambda () (add-hook 'before-save-hook 'dart-format nil t))))
+        dart-enable-analysis-server nil
+        dart-debug nil
+        dart-format-on-save t)
+  (add-hook 'dart-mode-hook 'eglot-ensure))
 
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)

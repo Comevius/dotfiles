@@ -12,7 +12,7 @@
  '(enable-recursive-minibuffers t)
  '(eshell-visual-commands
    (quote
-    ("screen" "top" "less" "more" "mpv" "vglconnect" "scrcpy")))
+    ("screen" "top" "less" "more" "mpv" "scrcpy")))
  '(eshell-visual-subcommands (quote (("flutter" "run"))))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))

@@ -26,43 +26,7 @@
  '(menu-bar-mode nil)
  '(mouse-autoselect-window t)
  '(next-line-add-newlines t)
- '(org-agenda-custom-commands
-   (quote
-    (("w" todo "WAITING"
-      ((org-agenda-files
-        (quote
-         ("~/Agenda/next.org")))))
-     ("i" "Inbox" alltodo ""
-      ((org-agenda-files
-        (quote
-         ("~/Agenda/inbox.org")))))
-     ("t" "Tasks" alltodo ""
-      ((org-agenda-files
-        (quote
-         ("~/Agenda/next.org")))
-       (org-agenda-category-filter-preset
-        (quote
-         ("+Task")))))
-     ("e" "Events" alltodo ""
-      ((org-agenda-files
-        (quote
-         ("~/Agenda/next.org")))
-       (org-agenda-category-filter-preset
-        (quote
-         ("+Event")))))
-     ("p" "Projects" alltodo ""
-      ((org-agenda-files
-        (quote
-         ("~/Agenda/next.org")))
-       (org-agenda-category-filter-preset
-        (quote
-         ("+Project"))))))))
- '(org-agenda-files (quote ("~/Agenda/inbox.org" "~/Agenda/next.org")))
- '(org-capture-templates
-   (quote
-    (("i" "Inbox" entry
-      (file "~/Agenda/inbox.org")
-      "* TODO %i%?"))))
+ '(org-agenda-files (quote ("~/Agenda/next.org")))
  '(org-refile-targets
    (quote
     (("~/Agenda/next.org" :maxlevel . 3)

@@ -38,6 +38,7 @@
           ([?\s-3]    . split-window-right)
           ([?\s-f]    . find-file)
           ([?\s-b]    . switch-to-buffer)
+          ([?\s-l]    . ibuffer)
           ([?\s-q]    . kill-this-buffer)
           ([?\s-x]    . execute-extended-command)
           ([?\s-r]    . exwm-reset)
@@ -211,11 +212,20 @@
                  ("org" (mode . org-mode))
                  ("magit" (mode . magit-mode))
                  ("eshell" (mode . eshell-mode))
+                 ("term" (mode . term-mode))
+                 ("dart" (mode . dart-mode))
                  ("exwm" (mode . exwm-mode))))))
   (add-hook 'ibuffer-mode-hook
             (lambda ()
               (ibuffer-auto-mode 1)
-              (ibuffer-switch-to-saved-filter-groups "default"))))
+              (ibuffer-switch-to-saved-filter-groups "default")))
+  :bind (:map ibuffer-mode-map
+              ("n"             . next-line)
+              ("e"             . previous-line)
+              ("C-n"           . ibuffer-forward-filter-group)
+              ("C-e"           . ibuffer-backward-filter-group)
+              ("l"             . ibuffer-visit-buffer)
+              ("k"             . ibuffer-kill-line)))
 
 (use-package ivy
   :ensure t

@@ -166,12 +166,12 @@
   (setq org-catch-invisible-edits 'error
         org-M-RET-may-split-line nil
         org-cycle-separator-lines 1)
-  (org-clock-persistence-insinuate)
   (setq org-clock-persist t
         org-clock-in-resume t
         org-clock-persist-query-resume t
         org-clock-out-remove-zero-time-clocks t
-        org-clock-report-include-clocking-task t)
+        org-clock-out-when-done t)
+  (org-clock-persistence-insinuate)
   :bind (:map org-mode-map
               ("C-n"          . nil)
               ("C-e"          . nil)
@@ -199,6 +199,8 @@
 	            ("M-I"          . org-shiftcontrolright)
 	            ("<C-return>"   . org-meta-return)
 	            ("<M-return>"   . org-insert-heading-respect-content)
+              ("C-l"          . org-clock-in)
+              ("M-l"          . org-clock-out)
               ("C-k"          . nil)
               ("M-k"          . nil)))
 

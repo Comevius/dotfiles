@@ -5,6 +5,8 @@ user_pref("dom.caches.enabled",                              true);
 user_pref("network.websocket.enabled",                       true);
 // IndexedDB
 user_pref("dom.indexedDB.enabled",                           true);
+// Beacon API
+user_pref("beacon.enabled",                                  true);
 
 // Network Information API
 user_pref("dom.netinfo.enabled",                             false);
@@ -39,8 +41,6 @@ user_pref("dom.IntersectionObserver.enabled",                false);
 user_pref("dom.w3c_pointer_events.enabled",                  false);
 // Touch Events API
 user_pref("dom.w3c_touch_events.enabled",                    0);
-// Beacon API
-user_pref("beacon.enabled",                                  false);
 // Web Audio API
 user_pref("dom.webaudio.enabled",                            false);
 // Web Speech API
@@ -68,7 +68,7 @@ user_pref("webgl.disable-extensions",                        true);
 // Only feature set and capabilities required by WebGL specification
 user_pref("webgl.min_capability_mode",                       true);
 // Debug vendor and renderer info
-user_pref("webgl.enable-debug-renderer-info",		     false);
+user_pref("webgl.enable-debug-renderer-info",		             false);
 
 // asm.js
 user_pref("javascript.options.asmjs",                        true);
@@ -86,39 +86,60 @@ user_pref("layout.css.visited_links_enabled",                false);
 user_pref("network.protocol-handler.warn-external-default",  true);
 user_pref("network.protocol-handler.expose-all",             false);
 // True if protocol should be handled by browser or external application
-user_pref("network.protocol-handler.expose.http",	     true);
-user_pref("network.protocol-handler.expose.https",	     true);
+user_pref("network.protocol-handler.expose.http",	           true);
+user_pref("network.protocol-handler.expose.https",	         true);
 user_pref("network.protocol-handler.expose.javascript",	     true);
 user_pref("network.protocol-handler.expose.moz-extension",   true);
-user_pref("network.protocol-handler.expose.ftp",	     true);
-user_pref("network.protocol-handler.expose.file",	     true);
-user_pref("network.protocol-handler.expose.about",	     true);
-user_pref("network.protocol-handler.expose.chrome",	     true);
-user_pref("network.protocol-handler.expose.blob",	     true);
-user_pref("network.protocol-handler.expose.data",	     true);
+user_pref("network.protocol-handler.expose.ftp",	           true);
+user_pref("network.protocol-handler.expose.file",	           true);
+user_pref("network.protocol-handler.expose.about",	         true);
+user_pref("network.protocol-handler.expose.chrome",	         true);
+user_pref("network.protocol-handler.expose.blob",	           true);
+user_pref("network.protocol-handler.expose.data",	           true);
 user_pref("network.protocol-handler.expose.magnet",          true);
 // False if protocol should not be handled by external application
-user_pref("network.protocol-handler.external.http",	     false);
-user_pref("network.protocol-handler.external.https",	     false);
+user_pref("network.protocol-handler.external.http",	         false);
+user_pref("network.protocol-handler.external.https",	       false);
 user_pref("network.protocol-handler.external.javascript",    false);
 user_pref("network.protocol-handler.external.moz-extension", false);
-user_pref("network.protocol-handler.external.ftp",	     false);
-user_pref("network.protocol-handler.external.file",	     false);
-user_pref("network.protocol-handler.external.about",	     false);
-user_pref("network.protocol-handler.external.chrome",	     false);
-user_pref("network.protocol-handler.external.blob",	     false);
-user_pref("network.protocol-handler.external.data",	     false);
+user_pref("network.protocol-handler.external.ftp",	         false);
+user_pref("network.protocol-handler.external.file",	         false);
+user_pref("network.protocol-handler.external.about",	       false);
+user_pref("network.protocol-handler.external.chrome",	       false);
+user_pref("network.protocol-handler.external.blob",	         false);
+user_pref("network.protocol-handler.external.data",	         false);
 user_pref("network.protocol-handler.external.magnet",        true);
 
 // ------------------------------------------------------------------------
 
 // Only private browsing
-user_pref("browser.privatebrowsing.autostart",		     true);
+user_pref("browser.privatebrowsing.autostart",		           false);
 
 // First party isolation
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("privacy.firstparty.isolate",                        true);
-user_pref("privacy.firstparty.isolate.restrict_opener_access", false);
+user_pref("privacy.firstparty.isolate.restrict_opener_access", true);
+
+// Clear on shutdown
+user_pref("privacy.sanitize.sanitizeOnShutdown",             true);
+user_pref("privacy.clearOnShutdown.cache",                   true);
+user_pref("privacy.clearOnShutdown.cookies",                 true);
+user_pref("privacy.clearOnShutdown.downloads",               true);
+user_pref("privacy.clearOnShutdown.formdata",                true);
+user_pref("privacy.clearOnShutdown.history",                 true);
+user_pref("privacy.clearOnShutdown.offlineApps",             true);
+user_pref("privacy.clearOnShutdown.sessions",                true);
+user_pref("privacy.clearOnShutdown.siteSettings",            false);
+// Clear recent history
+user_pref("privacy.cpd.cache",                               true);
+user_pref("privacy.cpd.cookies",                             true);
+user_pref("privacy.cpd.formdata",                            true);
+user_pref("privacy.cpd.history",                             true);
+user_pref("privacy.cpd.offlineApps",                         true);
+user_pref("privacy.cpd.passwords",                           true);
+user_pref("privacy.cpd.sessions",                            true);
+user_pref("privacy.cpd.siteSettings",                        true);
+user_pref("privacy.sanitize.timeSpan",                       0);
 
 // Cache
 user_pref("network.http.use-cache",                          true);
@@ -133,8 +154,9 @@ user_pref("browser.cache.offline.enable",                    false);
 // Logins and passwords
 user_pref("signon.rememberSignons",                          false);
 // Cookies
-user_pref("network.cookie.cookieBehavior",                   1);
+user_pref("network.cookie.cookieBehavior",                   0);
 user_pref("network.cookie.lifetimePolicy",                   2);
+user_pref("network.cookie.thirdparty.sessionOnly",           true);
 // Browsing and download history
 user_pref("places.history.enabled",                          false);
 user_pref("browser.download.manager.retention",              0);
@@ -156,12 +178,13 @@ user_pref("services.sync.engine.creditcards",                false);
 user_pref("services.sync.engine.addresses",                  false);
 
 // Session restore
-user_pref("browser.sessionstore.privacy_level",		     2);
+user_pref("browser.sessionstore.privacy_level",		           2);
 user_pref("browser.sessionstore.resume_from_crash",          false);
 user_pref("browser.sessionstore.max_tabs_undo",              0);
 user_pref("browser.sessionstore.max_windows_undo",           0);
 // Startup
 user_pref("browser.startup.page",                            0);
+user_pref("browser.startup.blankWindow",                     false);
 
 // Address bar autocomplete
 user_pref("browser.urlbar.autocomplete.enabled",             false);
@@ -182,11 +205,11 @@ user_pref("browser.fixup.alternate.enabled",                 false);
 user_pref("browser.urlbar.oneOffSearches",                   false);
 
 // New Tab Page
-user_pref("browser.newtabpage.enabled",		                 false);
+user_pref("browser.newtabpage.enabled",		                   false);
 // Activity Stream (replaces New Tab Page)
 user_pref("browser.newtabpage.activity-stream.enabled",          false);
-user_pref("browser.newtabpage.activity-stream.feeds.newtabinit", false);
 user_pref("browser.newtabpage.activity-stream.prerender",        false);
+user_pref("browser.newtabpage.activity-stream.feeds.newtabinit", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets",   false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.library.activity-stream.enabled",             false);
@@ -328,14 +351,14 @@ user_pref("devtools.debugger.force-local",                   true);
 
 // Firefox updates
 user_pref("app.update.enabled",                              false);
-user_pref("app.update.auto",			             false);
+user_pref("app.update.auto",			                           false);
 // Add-on updates
 user_pref("extensions.update.enabled",                       true);
 // Kinto blocklists
 user_pref("services.blocklist.update_enabled",               true);
 user_pref("services.blocklist.signing.enforced",             true);
 // Search engine updates
-user_pref("browser.search.update",                           false);
+user_pref("browser.search.update",                           true);
 // Check if default browser
 user_pref("browser.shell.checkDefaultBrowser",               false);
 
@@ -370,6 +393,9 @@ user_pref("browser.safebrowsing.blockedURIs.enabled",        false);
 user_pref("privacy.trackingprotection.enabled",              true);
 user_pref("privacy.trackingprotection.pbmode.enabled",       true);
 
+// Contextual identity containers
+user_pref("privacy.userContext.enabled",                     true);
+
 // Default search engine region
 user_pref("browser.search.countryCode",                      "US");
 user_pref("browser.search.region",                           "US");
@@ -386,6 +412,7 @@ user_pref("accessibility.force_disabled",                    1);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1333933
 // https://github.com/ghacksuserjs/ghacks-user.js/issues/7
 user_pref("privacy.resistFingerprinting",                    true);
+user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 
 // ------------------------------------------------------------------------
 

@@ -18,6 +18,8 @@ alias df df -h $*
 alias free free -m
 alias sshl ssh -NfL $1:localhost:$1 other
 alias sshr ssh -NfR $1:localhost:$1 other
-alias flur flutter run --observatory-port 8100
+alias flur flutter run
+alias flurp flutter run --profile
+alias flurr flutter run --release
 alias avd emulator -gpu host -avd $1
 alias avds emulator -list-avds

@@ -129,7 +129,7 @@ user_pref("privacy.clearOnShutdown.formdata",                true);
 user_pref("privacy.clearOnShutdown.history",                 true);
 user_pref("privacy.clearOnShutdown.offlineApps",             true);
 user_pref("privacy.clearOnShutdown.sessions",                true);
-user_pref("privacy.clearOnShutdown.siteSettings",            false);
+user_pref("privacy.clearOnShutdown.siteSettings",            true);
 // Clear recent history
 user_pref("privacy.cpd.cache",                               true);
 user_pref("privacy.cpd.cookies",                             true);

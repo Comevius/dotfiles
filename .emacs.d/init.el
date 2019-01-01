@@ -38,6 +38,7 @@
           ([?\s-3]    . split-window-right)
           ([?\s-f]    . find-file)
           ([?\s-b]    . switch-to-buffer)
+          ([?\s-p]    . projectile-command-map)
           ([?\s-l]    . ibuffer)
           ([?\s-q]    . kill-this-buffer)
           ([?\s-x]    . execute-extended-command)
@@ -264,6 +265,16 @@
               ("i"   . magit-ediff-dwim)
               ("I"   . magit-ediff-popup)
               (";"   . magit-gitignore)))
+
+(use-package projectile
+  :ensure t
+  :init
+  (setq projectile-indexing-method 'alien
+        projectile-completion-system 'ivy)
+  (projectile-mode 1)
+  :bind (:map projectile-command-map
+              ("s"   . projectile-ripgrep)
+              ("x"   . projectile-run-eshell)))
 
 (use-package eglot
   :ensure t

@@ -10,9 +10,7 @@
  '(eldoc-echo-area-use-multiline-p nil)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)
- '(eshell-visual-commands
-   (quote
-    ("screen" "top" "less" "more" "mpv" "scrcpy")))
+ '(eshell-visual-commands (quote ("screen" "top" "less" "more" "mpv" "scrcpy")))
  '(eshell-visual-subcommands (quote (("flutter" "run"))))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))
@@ -26,14 +24,15 @@
  '(menu-bar-mode nil)
  '(mouse-autoselect-window t)
  '(next-line-add-newlines t)
- '(org-agenda-files (quote ("~/Agenda/next.org")))
+ '(org-agenda-files (quote ("~/Agenda/next.org" "~/Agenda/someday.org")))
  '(org-refile-targets
    (quote
     (("~/Agenda/next.org" :maxlevel . 3)
      ("~/Agenda/someday.org" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
+    (projectile eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
+ '(projectile-project-search-path (quote ("~/Agenda" "~/Projects")))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

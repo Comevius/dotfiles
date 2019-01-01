@@ -32,7 +32,6 @@
  '(package-selected-packages
    (quote
     (projectile eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
- '(projectile-project-search-path (quote ("~/Agenda" "~/Projects")))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

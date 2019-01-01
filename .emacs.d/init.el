@@ -270,10 +270,11 @@
   :ensure t
   :init
   (setq projectile-indexing-method 'alien
-        projectile-completion-system 'ivy)
+        projectile-completion-system 'ivy
+        projectile-use-git-grep t)
   (projectile-mode 1)
   :bind (:map projectile-command-map
-              ("s"   . projectile-ripgrep)
+              ("s"   . projectile-grep)
               ("x"   . projectile-run-eshell)))
 
 (use-package eglot

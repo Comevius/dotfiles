@@ -24,11 +24,11 @@
  '(menu-bar-mode nil)
  '(mouse-autoselect-window t)
  '(next-line-add-newlines t)
- '(org-agenda-files (quote ("~/Agenda/next.org" "~/Agenda/someday.org")))
+ '(org-agenda-files (quote ("~/Agenda/next.org.gpg" "~/Agenda/someday.org.gpg")))
  '(org-refile-targets
    (quote
-    (("~/Agenda/next.org" :maxlevel . 3)
-     ("~/Agenda/someday.org" :maxlevel . 3))))
+    (("~/Agenda/next.org.gpg" :maxlevel . 3)
+     ("~/Agenda/someday.org.gpg" :maxlevel . 3))))
  '(package-selected-packages
    (quote
     (projectile eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))

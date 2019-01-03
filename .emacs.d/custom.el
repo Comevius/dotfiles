@@ -24,14 +24,16 @@
  '(menu-bar-mode nil)
  '(mouse-autoselect-window t)
  '(next-line-add-newlines t)
- '(org-agenda-files (quote ("~/Agenda/next.org.gpg" "~/Agenda/someday.org.gpg")))
+ '(org-agenda-files
+   (quote
+    ("~/Agenda/next.org.gpg" "~/Agenda/someday.org.gpg")))
  '(org-refile-targets
    (quote
     (("~/Agenda/next.org.gpg" :maxlevel . 3)
      ("~/Agenda/someday.org.gpg" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (projectile eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
+    (eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

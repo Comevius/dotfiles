@@ -5,6 +5,9 @@ alias t (ansi-term "/bin/sh")
 alias r /bin/rm -rI $*
 alias c /bin/cp $*
 alias m /bin/mv $*
+alias P cd ~/Projects/earlybetter
+alias A cd ~/Agenda
+alias D cd ~/Downloads
 alias pacu sudo pacman -Syu $*
 alias paci sudo pacman -S $*
 alias pacr sudo pacman -Rsn $*

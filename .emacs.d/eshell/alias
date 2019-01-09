@@ -27,3 +27,5 @@ alias flurr flutter run --release
 alias avd emulator -gpu host -avd $1
 alias avds emulator -list-avds
 alias encrypt gpg --output $1.gpg --encrypt --recipient comevius@gmail.com $1
+alias -dpms xset s off -dpms
+alias +dpms xset s reset +dpms

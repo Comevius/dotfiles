@@ -33,7 +33,7 @@
      ("~/Agenda/someday.org.gpg" :maxlevel . 3))))
  '(package-selected-packages
    (quote
-    (eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
+    (avy eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

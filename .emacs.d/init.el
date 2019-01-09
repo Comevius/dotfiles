@@ -36,10 +36,10 @@
           ([?\s-1]    . delete-other-windows)
           ([?\s-2]    . split-window-bellow)
           ([?\s-3]    . split-window-right)
-          ([?\s-f]    . find-file)
           ([?\s-b]    . ibuffer)
-          ([?\s-s]    . counsel-git-grep)
+          ([?\s-f]    . find-file)
           ([?\s-p]    . counsel-git)
+          ([?\s-s]    . counsel-git-grep)
           ([?\s-l]    . switch-to-buffer)
           ([?\s-k]    . kill-this-buffer)
           ([?\s-v]    . magit-status)
@@ -61,62 +61,41 @@
             (lambda ()
               (exwm-workspace-rename-buffer exwm-title))))
 
-(use-package eshell
-  :init
-  (setq eshell-scroll-to-bottom-on-input 'this
-        eshell-list-files-after-cd t
-        eshell-ls-initial-args "-alh"
-        eshell-banner-message ""
-        eshell-cmpl-ignore-case t
-        eshell-show-lisp-alternatives nil
-        eshell-cmpl-cycle-cutoff-length 3)
-  ;; FIXME: What the hell!?
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point))))
-
-(use-package pinentry
-  :ensure t
-  :config
-  (pinentry-start))
-
-(use-package tramp
-  :config
-  (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
-
 (use-package bind-key
   :init
   (define-key input-decode-map [?\C-i] [C-i])
   :bind  (("C-n"     . next-line)
           ("C-e"     . previous-line)
-          ("M-n"     . forward-paragraph)
-	        ("M-e"     . backward-paragraph)
+          ("M-n"     . nil)
+	        ("M-e"     . nil)
           ("C-o"     . backward-char)
 	        ("<C-i>"   . forward-char)
-	        ("M-o"     . backward-sexp)
-	        ("M-i"     . forward-sexp)
+	        ("M-o"     . nil)
+	        ("M-i"     . nil)
           ("C-h"     . beginning-of-indentation-or-line)
-	        ("C-t"     . end-of-line)
-	        ("M-h"     . backward-sentence)
-	        ("M-t"     . forward-sentence)
-	        ("s-["     . scroll-up-command)
+          ("C-t"     . end-of-line)
+          ("M-h"     . nil)
+	        ("M-t"     . nil)
+          ("s-["     . scroll-up-command)
 	        ("s-]"     . scroll-down-command)
 	        ("M-["     . end-of-buffer)
 	        ("M-]"     . beginning-of-buffer)
-	        ("C-d"     . backward-kill-char-or-word)
-	        ("M-d"     . backward-kill-line)
-          ("C-s"     . swiper)
-          ("M-s"     . nil)
           ("C-k"     . kill-whole-line-or-region)
 	        ("M-k"     . copy-whole-line-or-region)
           ("C-;"     . comment-or-uncomment-line-or-region)
           ("M-;"     . nil)
+          ("C-a"     . avy-goto-char-timer)
+	        ("M-a"     . nil)
+          ("C-s"     . swiper)
+          ("M-s"     . nil)
 	        ("C-u"     . undo)
-	        ("M-u"     . undo-only)
+	        ("M-u"     . nil)
 	        ("C-g"     . keyboard-quit)
-	        ("M-g"     . keyboard-escape-quit)
+	        ("M-g"     . nil)
           ("<C-tab>" . indent-relative)
           ("<M-tab>" . indent-line-or-region)
+          ("C-d"     . nil)
+	        ("M-d"     . nil)
 	        ("C-f"     . nil)
           ("M-f"     . nil)
 	        ("C-b"     . nil)
@@ -125,8 +104,6 @@
           ("M-l"     . nil)
           ("C-q"     . nil)
 	        ("M-q"     . nil)
-	        ("C-a"     . nil)
-	        ("M-a"     . nil)
           ("C-w"     . nil)
           ("M-w"     . nil)
           ("C-r"     . nil)
@@ -165,48 +142,38 @@
   :config
   (global-whitespace-mode t))
 
-(use-package org
+(use-package eshell
   :init
-  (setq org-catch-invisible-edits 'error
-        org-M-RET-may-split-line nil
-        org-cycle-separator-lines 1)
-  (setq org-clock-persist t
-        org-clock-in-resume t
-        org-clock-persist-query-resume t
-        org-clock-out-remove-zero-time-clocks t
-        org-clock-out-when-done t)
-  (org-clock-persistence-insinuate)
-  :bind (:map org-mode-map
-              ("C-n"          . nil)
-              ("C-e"          . nil)
-              ("C-o"          . nil)
-              ("<C-i>"        . nil)
-              ("M-n"          . org-forward-element)
-              ("M-e"          . org-backward-element)
-              ("M-o"          . nil)
-              ("M-i"          . nil)
-              ("C-h"          . org-beginning-of-line)
-              ("C-t"          . org-end-of-line)
-              ("M-h"          . org-backward-sentence)
-              ("M-t"          . org-forward-sentence)
-              ("C-M-n"        . org-shiftdown)
-              ("C-M-e"        . org-shiftup)
-              ("C-M-o"        . org-shiftleft)
-              ("C-M-i"        . org-shiftright)
-              ("C-N"          . org-shiftmetadown)
-              ("C-E"          . org-shiftmetaup)
-              ("C-O"          . org-shiftmetaleft)
-              ("C-I"          . org-shiftmetaright)
-	            ("M-N"          . org-shiftcontroldown)
-	            ("M-E"          . org-shiftcontrolup)
-	            ("M-O"          . org-shiftcontrolleft)
-	            ("M-I"          . org-shiftcontrolright)
-	            ("<C-return>"   . org-meta-return)
-	            ("<M-return>"   . org-insert-heading-respect-content)
-              ("C-l"          . nil)
-              ("M-l"          . nil)
-              ("C-k"          . nil)
-              ("M-k"          . nil)))
+  (setq eshell-scroll-to-bottom-on-input 'this
+        eshell-list-files-after-cd t
+        eshell-ls-initial-args "-alh"
+        eshell-banner-message ""
+        eshell-cmpl-ignore-case t
+        eshell-show-lisp-alternatives nil
+        eshell-cmpl-cycle-cutoff-length 3)
+  ;; FIXME: What the hell!?
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point))))
+
+(use-package pinentry
+  :ensure t
+  :config
+  (pinentry-start))
+
+(use-package tramp
+  :config
+  (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
+
+(use-package bs
+  :config
+  (add-to-list 'bs-configurations
+               '("projects" nil nil nil
+                 (lambda (buffer)
+                   (not (equal (project-current)
+                               (with-current-buffer buffer (project-current)))))
+                 nil))
+  (setq bs-default-configuration "projects"))
 
 (use-package ibuffer
   :init
@@ -228,10 +195,20 @@
   :bind (:map ibuffer-mode-map
               ("n"             . next-line)
               ("e"             . previous-line)
-              ("C-n"           . ibuffer-forward-filter-group)
-              ("C-e"           . ibuffer-backward-filter-group)
               ("l"             . ibuffer-visit-buffer)
               ("k"             . ibuffer-kill-line)))
+
+(use-package org
+  :init
+  (setq org-catch-invisible-edits 'error
+        org-M-RET-may-split-line nil
+        org-cycle-separator-lines 1
+        org-clock-persist t
+        org-clock-in-resume t
+        org-clock-persist-query-resume t
+        org-clock-out-remove-zero-time-clocks t
+        org-clock-out-when-done t)
+  (org-clock-persistence-insinuate))
 
 (use-package ivy
   :ensure t
@@ -242,9 +219,11 @@
   :bind (:map ivy-minibuffer-map
               ("C-n"   . ivy-next-line)
               ("C-e"   . ivy-previous-line)
-              ("C-o"   . nil)
-	            ("C-d"   . ivy-backward-kill-word)
+              ("C-l"   . ivy-done)
 	            ("C-k"   . ivy-kill-whole-line)))
+
+(use-package avy
+  :ensure t)
 
 (use-package counsel
   :ensure t)
@@ -259,15 +238,25 @@
   :bind (:map magit-mode-map
               ("n"   . magit-section-forward)
               ("e"   . magit-section-backward)
-              ("C-n" . magit-section-forward-sibling)
-              ("C-e" . magit-section-backward-sibling)
-              ("E"   . nil)
               ("N"   . nil)
+              ("E"   . nil)
               ("p"   . magit-push-popup)
               ("P"   . nil)
               ("i"   . magit-ediff-dwim)
               ("I"   . magit-ediff-popup)
               (";"   . magit-gitignore)))
+
+(use-package project
+  :init
+  (defun project-try-dart (dir)
+  (let ((project (or (locate-dominating-file dir "pubspec.yaml")
+                     (locate-dominating-file dir "BUILD"))))
+    (if project
+        (cons 'dart project)
+      (cons 'transient dir))))
+  (add-hook 'project-find-functions #'project-try-dart)
+  (cl-defmethod project-roots ((project (head dart)))
+    (list (cdr project))))
 
 (use-package eglot
   :ensure t

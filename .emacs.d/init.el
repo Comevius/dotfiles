@@ -168,12 +168,12 @@
 (use-package bs
   :config
   (add-to-list 'bs-configurations
-               '("projects" nil nil nil
+               '("project-or-class" nil nil nil
                  (lambda (buffer)
-                   (not (equal (project-current)
-                               (with-current-buffer buffer (project-current)))))
+                   (or (not (project-buffer-p buffer))
+                       (not (class-buffer-p buffer))))
                  nil))
-  (setq bs-default-configuration "projects"))
+  (setq bs-default-configuration "project-or-class"))
 
 (use-package ibuffer
   :init
@@ -281,6 +281,16 @@
   (let ((magit-buffers (magit-mode-get-buffers)))
     (magit-restore-window-configuration)
     (mapc 'kill-buffer magit-buffers)))
+
+(defun class-buffer-p (buffer)
+  (interactive)
+  (eq (derived-mode-class major-mode)
+      (derived-mode-class (with-current-buffer buffer major-mode))))
+
+(defun project-buffer-p (buffer)
+  (interactive)
+  (equal (project-current)
+         (with-current-buffer buffer (project-current))))
 
 (defun toggle-eshell ()
   (interactive)

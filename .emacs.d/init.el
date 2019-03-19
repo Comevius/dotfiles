@@ -272,6 +272,11 @@
         dart-debug nil
         dart-format-on-save t)
   (add-hook 'dart-mode-hook 'eglot-ensure))
+(use-package markdown-mode
+  :ensure t)
+
+(use-package yaml-mode
+  :ensure t)
 
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
@@ -294,9 +299,10 @@
 
 (defun toggle-eshell ()
   (interactive)
-  (if (eq (current-buffer) (get-buffer "*eshell*"))
+  (let ((eshell-buffer (get-buffer "*eshell*")))
+    (if (eq (current-buffer) eshell-buffer)
       (switch-to-prev-buffer)
-    (eshell)))
+    (switch-to-buffer eshell-buffer))))
 
 (defun toggle-firefox ()
   (interactive)

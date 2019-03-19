@@ -14,6 +14,7 @@
  '(eshell-visual-subcommands (quote (("flutter" "run"))))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))
+ '(global-eldoc-mode -1)
  '(indent-tabs-mode nil)
  '(inhibit-startup-echo-area-message "comevius")
  '(inhibit-startup-screen t)
@@ -23,6 +24,7 @@
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(mouse-autoselect-window t)
+ '(mouse-drag-and-drop-region-show-tooltip nil)
  '(next-line-add-newlines t)
  '(org-agenda-files
    (quote

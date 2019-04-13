@@ -300,9 +300,11 @@
 (defun toggle-eshell ()
   (interactive)
   (let ((eshell-buffer (get-buffer "*eshell*")))
-    (if (eq (current-buffer) eshell-buffer)
-      (switch-to-prev-buffer)
-    (switch-to-buffer eshell-buffer))))
+    (if eshell-buffer
+        (if (eq (current-buffer) eshell-buffer)
+            (switch-to-prev-buffer)
+          (switch-to-buffer eshell-buffer))
+      (eshell))))
 
 (defun toggle-firefox ()
   (interactive)
@@ -310,7 +312,7 @@
     (if firefox-buffer
         (if (eq (current-buffer) firefox-buffer)
             (switch-to-prev-buffer)
-        (switch-to-buffer firefox-buffer))
+          (switch-to-buffer firefox-buffer))
       (start-process "" nil "/usr/bin/firefox"))))
 
 (defun get-exwm-buffer (class-name)

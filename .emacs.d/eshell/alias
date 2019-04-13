@@ -15,6 +15,8 @@ alias pacq sudo pacman -Q $*
 alias pacc sudo pacman -Scc $*
 alias mount udisksctl mount -b $*
 alias umount udisksctl unmount -b $*
+alias loop udisksctl loop-setup -r -f $*
+alias uloop udisksctl loop-delete -b $*
 alias untar tar -xf $*
 alias du du -h $*
 alias df df -h $*

@@ -1,5 +1,5 @@
 pkgname=emacs
-pkgver=26.1
+pkgver=26.2
 pkgrel=1
 epoch=1
 pkgdesc="Emacs text editor"
@@ -9,11 +9,11 @@ license=('GPL3')
 depends=('m17n-lib' 'libotf' 'gnutls' 'jansson' 'libxml2' 'libsystemd')
 source=("ftp://ftp.gnu.org/gnu/emacs/${pkgname}-${pkgver}.tar.xz"
         "override.conf")
-sha256sums=('1cf4fc240cd77c25309d15e18593789c8dbfba5c2b44d8f77c886542300fd32c'
+sha256sums=('151ce69dbe5b809d4492ffae4a4b153b2778459de6deb26f35691e1281a9c58e'
             '7791d64f508309478c2d7b85b577303e829296c5f11d824cc4cf6bb89321f90f')
 
 build() {
-  cd "$srcdir"/emacs-26.1
+  cd "$srcdir"/emacs-"$pkgver"
   ./configure --program-transform-name='s/^ctags$/ctags.emacs/' \
               --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
               --localstatedir=/var --without-all --with-x-toolkit=no \
@@ -25,7 +25,7 @@ build() {
 }
 
 package() {
-  cd "$srcdir"/emacs-26.1
+  cd "$srcdir"/emacs-"$pkgver"
   make DESTDIR="$pkgdir" install
   cd "$srcdir"
   install -D override.conf -t "$pkgdir"/usr/lib/systemd/user/emacs.service.d

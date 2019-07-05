@@ -1,12 +1,10 @@
 #!/bin/sh
 
-export TERMINAL="urxvtc"
-export VISUAL="emacsclient -c"
 export BROWSER="firefox"
-
 export QEMU_AUDIO_DRV="none"
 export NO_AT_BRIDGE="1"
 export _JAVA_AWT_WM_NONREPARENTING="1"
+export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP="1"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -20,6 +18,7 @@ export STUDIO_PROPERTIES="$XDG_CONFIG_HOME/studio.properties"
 export WEBIDE_PROPERTIES="$XDG_CONFIG_HOME/webstorm.properties"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME/npm/npm-init.js"
+export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME/ccache.config"
 
 # XDG_CACHE_HOME
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nv"
@@ -29,6 +28,7 @@ export BUNDLE_CACHE_PATH="$XDG_CACHE_HOME/bundle"
 export PUB_CACHE="$XDG_CACHE_HOME/pub"
 export _JAVA_OPTIONS="-Djava.io.tmpdir=$XDG_CACHE_HOME/java"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
 
 # XDG_DATA_HOME
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"

@@ -5,6 +5,7 @@ export QEMU_AUDIO_DRV="none"
 export NO_AT_BRIDGE="1"
 export _JAVA_AWT_WM_NONREPARENTING="1"
 export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP="1"
+unset HISTFILE
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"

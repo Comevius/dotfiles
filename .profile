@@ -13,10 +13,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # XDG_CONFIG_HOME
-export IDEA_PROPERTIES="$XDG_CONFIG_HOME/idea.properties"
-export CL_PROPERTIES="$XDG_CONFIG_HOME/clion.properties"
-export STUDIO_PROPERTIES="$XDG_CONFIG_HOME/studio.properties"
-export WEBIDE_PROPERTIES="$XDG_CONFIG_HOME/webstorm.properties"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME/npm/npm-init.js"
 export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME/ccache.config"

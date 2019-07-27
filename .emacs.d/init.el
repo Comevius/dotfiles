@@ -308,7 +308,7 @@
 
 (defun toggle-firefox ()
   (interactive)
-  (let ((firefox-buffer (get-exwm-buffer "Firefox")))
+  (let ((firefox-buffer (get-exwm-buffer "firefox")))
     (if firefox-buffer
         (if (eq (current-buffer) firefox-buffer)
             (switch-to-prev-buffer)

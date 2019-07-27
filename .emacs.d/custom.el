@@ -15,6 +15,7 @@
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))
  '(global-eldoc-mode -1)
+ '(gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
  '(indent-tabs-mode nil)
  '(inhibit-startup-echo-area-message "comevius")
  '(inhibit-startup-screen t)

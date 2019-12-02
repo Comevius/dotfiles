@@ -37,7 +37,6 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_PREFIX="$XDG_DATA_HOME/npm"
 
 # XDG_RUNTIME_DIR
-export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
 export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 
 # Android
@@ -47,6 +46,7 @@ export ANDROID_HOME="$ANDROID_SDK_ROOT"
 # Flutter
 export FLUTTER_ROOT="$HOME/flutter"
 export DART_SDK_PATH="$FLUTTER_ROOT/bin/cache/dart-sdk"
+export CHROME_EXECUTABLE="/usr/bin/chromium"
 
 # PATH
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"

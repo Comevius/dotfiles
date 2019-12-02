@@ -50,7 +50,6 @@
           ([?\s--]    . toggle-eshell)
           ([?\s-=]    . toggle-firefox)
           ([?\s-\\]   . counsel-linux-app)
-          ([?\s-']    . org-cycle-agenda-files)
           ([?\s-,]    . pulseaudio-volume-down)
           ([?\s-.]    . pulseaudio-volume-up)
           ([?\s-/]    . pulseaudio-mute)))
@@ -222,9 +221,6 @@
               ("C-l"   . ivy-done)
 	            ("C-k"   . ivy-kill-whole-line)))
 
-(use-package avy
-  :ensure t)
-
 (use-package counsel
   :ensure t)
 
@@ -245,38 +241,6 @@
               ("i"   . magit-ediff-dwim)
               ("I"   . magit-ediff-popup)
               (";"   . magit-gitignore)))
-
-(use-package project
-  :init
-  (defun project-try-dart (dir)
-  (let ((project (or (locate-dominating-file dir "pubspec.yaml")
-                     (locate-dominating-file dir "BUILD"))))
-    (if project
-        (cons 'dart project)
-      (cons 'transient dir))))
-  (add-hook 'project-find-functions #'project-try-dart)
-  (cl-defmethod project-roots ((project (head dart)))
-    (list (cdr project))))
-
-(use-package eglot
-  :ensure t
-  :config
-  (add-to-list 'eglot-server-programs '(dart-mode . ("dart_language_server"))))
-
-(use-package dart-mode
-  :ensure t
-  :pin melpa
-  :init
-  (setq dart-sdk-path (file-name-as-directory (getenv "DART_SDK_PATH"))
-        dart-enable-analysis-server nil
-        dart-debug nil
-        dart-format-on-save t)
-  (add-hook 'dart-mode-hook 'eglot-ensure))
-(use-package markdown-mode
-  :ensure t)
-
-(use-package yaml-mode
-  :ensure t)
 
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)

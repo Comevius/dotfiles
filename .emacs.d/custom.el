@@ -27,16 +27,7 @@
  '(mouse-autoselect-window t)
  '(mouse-drag-and-drop-region-show-tooltip nil)
  '(next-line-add-newlines t)
- '(org-agenda-files
-   (quote
-    ("~/Agenda/next.org.gpg" "~/Agenda/someday.org.gpg")))
- '(org-refile-targets
-   (quote
-    (("~/Agenda/next.org.gpg" :maxlevel . 3)
-     ("~/Agenda/someday.org.gpg" :maxlevel . 3))))
- '(package-selected-packages
-   (quote
-    (avy eglot pinentry exwm counsel ivy use-package swiper org magit leuven-theme dart-mode)))
+ '(proced-tree-flag t)
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

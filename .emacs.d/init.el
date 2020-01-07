@@ -41,7 +41,7 @@
           ([?\s-p]    . counsel-git)
           ([?\s-s]    . counsel-git-grep)
           ([?\s-l]    . switch-to-buffer)
-          ([?\s-k]    . kill-this-buffer)
+          ([?\s-k]    . custom/kill-this-buffer)
           ([?\s-v]    . magit-status)
           ([?\s-g]    . top-level)
           ([?\s-x]    . execute-extended-command)
@@ -300,6 +300,13 @@
   (interactive)
   (let ((process-connecction-type nil))
     (start-process "" nil "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle")))
+
+;; Workaround for bug#8184
+(defun custom/kill-this-buffer ()
+  (interactive)
+  (if (window-minibuffer-p)
+      (abort-recursive-edit)
+    (kill-buffer (current-buffer))))
 
 (defun backward-kill-char-or-word ()
   (interactive)

@@ -1,32 +1,31 @@
 pkgname=emacs
-pkgver=26.3
+pkgver=27.0.91
 pkgrel=1
 epoch=1
 pkgdesc="Emacs text editor"
 arch=('x86_64')
-url="http://www.gnu.org/software/emacs/emacs.html"
+url="http://www.gnu.org/software/emacs/"
 license=('GPL3')
-depends=('m17n-lib' 'libotf' 'gnutls' 'jansson' 'libxml2' 'libsystemd')
-source=("ftp://ftp.gnu.org/gnu/emacs/${pkgname}-${pkgver}.tar.xz"
-        "override.conf")
-sha256sums=('4d90e6751ad8967822c6e092db07466b9d383ef1653feb2f95c93e7de66d3485'
-            '7791d64f508309478c2d7b85b577303e829296c5f11d824cc4cf6bb89321f90f')
+depends=('dbus' 'libsystemd' 'gnutls' 'gmp' 'jansson' 'libxml2'
+         'cairo' 'harfbuzz')
+source=("https://alpha.gnu.org/gnu/emacs/pretest/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('96813dd385dec81ceb1868645939d49b81ca2c1feb42a58b4d38125ebd1345aa')
 
 build() {
   cd "$srcdir"/emacs-"$pkgver"
   ./configure --program-transform-name='s/^ctags$/ctags.emacs/' \
               --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
-              --localstatedir=/var --without-all --with-x-toolkit=no \
-              --with-modules --with-threads \
-              --with-libsystemd --with-dbus --with-file-notification=yes \
-              --with-xft --with-libotf --with-m17n-flt \
-              --with-xml2 --with-json --with-gnutls
+              --localstatedir=/var --mandir=/usr/share/man \
+              --disable-build-details \
+              --without-all --with-x-toolkit=no --with-modules --with-threads \
+              --with-gnutls --with-libgmp --with-dbus --with-libsystemd \
+              --with-file-notification=yes \
+              --with-cairo --with-harfbuzz \
+              --with-xml2 --with-json
   make
 }
 
 package() {
   cd "$srcdir"/emacs-"$pkgver"
   make DESTDIR="$pkgdir" install
-  cd "$srcdir"
-  install -D override.conf -t "$pkgdir"/usr/lib/systemd/user/emacs.service.d
 }

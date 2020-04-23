@@ -1,20 +1,3 @@
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
-
-(require 'package)
-(setq package-enable-at-startup nil)
-(setq package-archives
-      '(("melpa-stable" . "https://stable.melpa.org/packages/")
-        ("org"          . "https://orgmode.org/elpa/")
-        ("gnu"          . "https://elpa.gnu.org/packages/")
-        ("melpa"        . "https://melpa.org/packages/")))
-(setq package-archive-priorities
-      '(("melpa-stable" . 10)
-        ("gnu"          . 5)
-        ("melpa"        . 0)))
-(package-initialize)
-
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install (cadr (assq 'org package-archive-contents)))
@@ -66,43 +49,43 @@
   :bind  (("C-n"     . next-line)
           ("C-e"     . previous-line)
           ("M-n"     . nil)
-	        ("M-e"     . nil)
+          ("M-e"     . nil)
           ("C-o"     . backward-char)
-	        ("<C-i>"   . forward-char)
-	        ("M-o"     . nil)
-	        ("M-i"     . nil)
+          ("<C-i>"   . forward-char)
+          ("M-o"     . nil)
+          ("M-i"     . nil)
           ("C-h"     . beginning-of-indentation-or-line)
           ("C-t"     . end-of-line)
           ("M-h"     . nil)
-	        ("M-t"     . nil)
+          ("M-t"     . nil)
           ("s-["     . scroll-up-command)
-	        ("s-]"     . scroll-down-command)
-	        ("M-["     . end-of-buffer)
-	        ("M-]"     . beginning-of-buffer)
+          ("s-]"     . scroll-down-command)
+          ("M-["     . end-of-buffer)
+          ("M-]"     . beginning-of-buffer)
           ("C-k"     . kill-whole-line-or-region)
-	        ("M-k"     . copy-whole-line-or-region)
+          ("M-k"     . copy-whole-line-or-region)
           ("C-;"     . comment-or-uncomment-line-or-region)
           ("M-;"     . nil)
           ("C-a"     . avy-goto-char-timer)
-	        ("M-a"     . nil)
+          ("M-a"     . nil)
           ("C-s"     . swiper)
           ("M-s"     . nil)
-	        ("C-u"     . undo)
-	        ("M-u"     . nil)
-	        ("C-g"     . keyboard-quit)
-	        ("M-g"     . nil)
+          ("C-u"     . undo)
+          ("M-u"     . nil)
+          ("C-g"     . keyboard-quit)
+          ("M-g"     . nil)
           ("<C-tab>" . indent-relative)
           ("<M-tab>" . indent-line-or-region)
           ("C-d"     . nil)
-	        ("M-d"     . nil)
-	        ("C-f"     . nil)
+          ("M-d"     . nil)
+          ("C-f"     . nil)
           ("M-f"     . nil)
-	        ("C-b"     . nil)
-	        ("M-b"     . nil)
+          ("C-b"     . nil)
+          ("M-b"     . nil)
           ("C-l"     . nil)
           ("M-l"     . nil)
           ("C-q"     . nil)
-	        ("M-q"     . nil)
+          ("M-q"     . nil)
           ("C-w"     . nil)
           ("M-w"     . nil)
           ("C-r"     . nil)
@@ -113,10 +96,10 @@
           ("M-p"     . nil)
           ("C-z"     . nil)
           ("M-z"     . nil)
-	        ("C-v"     . nil)
+          ("C-v"     . nil)
           ("M-v"     . nil)
-	        ("C-'"     . nil)
-	        ("M-'"     . nil)
+          ("C-'"     . nil)
+          ("M-'"     . nil)
           ("C-`"     . universal-argument)
           :map universal-argument-map
           ("C-`"     . universal-argument-more)
@@ -125,11 +108,7 @@
 (use-package leuven-theme
   :ensure t
   :init
-  (add-hook 'after-make-frame-functions
-            (lambda (frame)
-              (with-selected-frame frame
-                (unless (custom-theme-p 'leuven)
-                  (load-theme 'leuven t)))))
+  (load-theme 'leuven t)
   :config
   (custom-theme-set-faces 'leuven
                           '(whitespace-line ((t (:background "white smoke"))))))
@@ -149,11 +128,7 @@
         eshell-banner-message ""
         eshell-cmpl-ignore-case t
         eshell-show-lisp-alternatives nil
-        eshell-cmpl-cycle-cutoff-length 3)
-  ;; FIXME: What the hell!?
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point))))
+        eshell-cmpl-cycle-cutoff-length 3))
 
 (use-package pinentry
   :ensure t
@@ -219,7 +194,7 @@
               ("C-n"   . ivy-next-line)
               ("C-e"   . ivy-previous-line)
               ("C-l"   . ivy-done)
-	            ("C-k"   . ivy-kill-whole-line)))
+              ("C-k"   . ivy-kill-whole-line)))
 
 (use-package counsel
   :ensure t)

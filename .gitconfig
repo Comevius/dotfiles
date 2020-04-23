@@ -1,6 +1,7 @@
 [user]
     name = Comevius
     email = comevius@gmail.com
+    signingkey = 9C136CCD403C0F28
 
 [github]
     user = Comevius

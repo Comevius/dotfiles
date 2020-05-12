@@ -218,7 +218,9 @@
               (";"   . magit-gitignore)))
 
 (use-package lsp-mode
-  :ensure t)
+  :ensure t
+  :init
+  (setq lsp-keymap-prefix "C-c l"))
 
 (use-package lsp-dart
   :ensure t

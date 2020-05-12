@@ -228,8 +228,7 @@
 
 (defun class-buffer-p (buffer)
   (interactive)
-  (eq (derived-mode-class major-mode)
-      (derived-mode-class (with-current-buffer buffer major-mode))))
+  (provided-mode-derived-p major-mode (with-current-buffer buffer major-mode)))
 
 (defun project-buffer-p (buffer)
   (interactive)

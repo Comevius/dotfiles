@@ -51,7 +51,7 @@ export CHROME_EXECUTABLE="/usr/bin/chromium"
 # PATH
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
 export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
-export PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin"
+export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/tools/bin"
 export PATH="$PATH:$FLUTTER_ROOT/bin:$DART_SDK_PATH/bin"
 export PATH="$PATH:$NPM_CONFIG_PREFIX/bin"
 export PATH="$PATH:$XDG_CACHE_HOME/pub/bin"

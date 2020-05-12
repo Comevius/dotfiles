@@ -28,7 +28,7 @@
  '(mouse-drag-and-drop-region-show-tooltip nil)
  '(next-line-add-newlines t)
  '(package-selected-packages
-   '(swiper magit counsel ivy pinentry leuven-theme exwm use-package org))
+   '(lsp-dart lsp-mode swiper magit counsel ivy pinentry leuven-theme exwm use-package org))
  '(proced-tree-flag t)
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)

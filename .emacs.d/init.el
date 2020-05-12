@@ -217,6 +217,13 @@
               ("I"   . magit-ediff-popup)
               (";"   . magit-gitignore)))
 
+(use-package lsp-mode
+  :ensure t)
+
+(use-package lsp-dart
+  :ensure t
+  :hook (dart-mode . lsp))
+
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
   (kill-buffer))

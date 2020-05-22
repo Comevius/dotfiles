@@ -53,8 +53,9 @@ export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
 export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
 export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/tools/bin"
 export PATH="$PATH:$FLUTTER_ROOT/bin:$DART_SDK_PATH/bin"
+export PATH="$PATH:$PUB_CACHE/bin"
 export PATH="$PATH:$NPM_CONFIG_PREFIX/bin"
-export PATH="$PATH:$XDG_CACHE_HOME/pub/bin"
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 

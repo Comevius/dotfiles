@@ -216,6 +216,9 @@
               ("I"   . magit-ediff-popup)
               (";"   . magit-gitignore)))
 
+(use-package yaml-mode
+  :ensure t)
+
 (use-package lsp-mode
   :ensure t
   :init

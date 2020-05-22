@@ -42,6 +42,7 @@ export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 # Android
 export ANDROID_SDK_ROOT="$HOME/android"
 export ANDROID_HOME="$ANDROID_SDK_ROOT"
+export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk-bundle"
 
 # Flutter
 export FLUTTER_ROOT="$HOME/flutter"

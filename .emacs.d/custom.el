@@ -8,6 +8,7 @@
  '(display-time-day-and-date t)
  '(display-time-mode t)
  '(eldoc-echo-area-use-multiline-p nil)
+ '(electric-indent-inhibit t)
  '(enable-local-variables :safe)
  '(enable-recursive-minibuffers t)
  '(eshell-visual-commands '("screen" "top" "less" "more" "mpv" "scrcpy"))

@@ -173,10 +173,10 @@ user_pref("network.http.referer.XOriginPolicy",              2);
 user_pref("network.http.referer.XOriginTrimmingPolicy",      0);
 user_pref("network.http.referer.spoofSource",                false);
 
-// DNS over HTTPS
-//user_pref("network.trr.mode",                                3);
-//user_pref("network.trr.uri",                                 "https://dns.cloudflare.com/.well-known/dns");
-//user_pref("network.trr.bootstrapAddress",                    "1.1.1.1");
+DNS over HTTPS
+user_pref("network.trr.mode",                                3);
+user_pref("network.trr.uri",                                 "https://dns.cloudflare.com/.well-known/dns");
+user_pref("network.trr.bootstrapAddress",                    "1.1.1.1");
 
 // HTTP Alternative Services
 user_pref("network.http.altsvc.enabled",                     true);

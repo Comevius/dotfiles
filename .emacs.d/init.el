@@ -222,7 +222,8 @@
 (use-package lsp-mode
   :ensure t
   :init
-  (setq lsp-keymap-prefix "C-c l"))
+  (setq lsp-keymap-prefix "C-c l"
+        lsp-diagnostic-package :flymake))
 
 (use-package lsp-dart
   :ensure t

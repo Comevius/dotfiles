@@ -15,6 +15,7 @@
  '(eshell-visual-subcommands '(("flutter" "run")))
  '(focus-follows-mouse t)
  '(fringe-mode 4 nil (fringe))
+ '(gc-cons-threshold 6291456)
  '(global-eldoc-mode -1)
  '(gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
  '(indent-tabs-mode nil)
@@ -31,6 +32,7 @@
  '(package-selected-packages
    '(yaml-mode lsp-dart lsp-mode swiper magit counsel ivy pinentry leuven-theme exwm use-package org))
  '(proced-tree-flag t)
+ '(read-process-output-max 1048576)
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
  '(tab-stop-list (number-sequence 2 120 2))

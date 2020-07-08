@@ -227,6 +227,9 @@
 
 (use-package lsp-dart
   :ensure t
+  :init
+  (setq lsp-dart-flutter-fringe-colors nil
+        lsp-dart-suggest-from-unimported-libraries nil)
   :hook (dart-mode . lsp))
 
 (defadvice term-handle-exit

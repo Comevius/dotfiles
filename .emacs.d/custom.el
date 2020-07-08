@@ -35,6 +35,7 @@
  '(read-process-output-max 1048576)
  '(scroll-bar-mode nil)
  '(set-mark-command-repeat-pop t)
+ '(tab-always-indent 'complete)
  '(tab-stop-list (number-sequence 2 120 2))
  '(tab-width 2)
  '(tool-bar-mode nil)

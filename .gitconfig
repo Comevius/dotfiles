@@ -11,6 +11,7 @@
     autocrlf = input
     quotepath = false
     commentchar = ";"
+    pager = cat
 
 [push]
     default = current

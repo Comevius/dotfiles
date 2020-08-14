@@ -6,6 +6,7 @@
 !.gnupg/
 !.gnupg/gpg-agent.conf
 !.emacs.d/
+!.emacs.d/early-init.el
 !.emacs.d/init.el
 !.emacs.d/custom.el
 !.emacs.d/eshell/

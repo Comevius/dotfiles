@@ -224,10 +224,10 @@
   :init
   (setq lsp-diagnostic-package :flymake
         lsp-completion-provider :none
-        lsp-enable-snippet nil)
+        lsp-enable-snippet nil
+        lsp-keymap-prefix "C-c l")
   :bind (:map lsp-mode-map
-              ("s-l"   . nil)
-              ("C-c l" . lsp-command-map)))
+              ("s-l"   . nil)))
 
 (use-package lsp-dart
   :ensure t

@@ -222,7 +222,9 @@
 (use-package lsp-mode
   :ensure t
   :init
-  (setq lsp-diagnostic-package :flymake)
+  (setq lsp-diagnostic-package :flymake
+        lsp-completion-provider :none
+        lsp-enable-snippet nil)
   :bind (:map lsp-mode-map
               ("s-l"   . nil)
               ("C-c l" . lsp-command-map)))

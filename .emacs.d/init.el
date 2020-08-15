@@ -222,8 +222,7 @@
 (use-package lsp-mode
   :ensure t
   :init
-  (setq lsp-keymap-prefix "C-c l"
-        lsp-diagnostic-package :flymake)
+  (setq lsp-diagnostic-package :flymake)
   :bind (:map lsp-mode-map
               ("s-l"   . nil)
               ("C-c l" . lsp-command-map)))

@@ -8,8 +8,9 @@ alias m /bin/mv $*
 alias P cd ~/Projects
 alias A cd ~/Agenda
 alias D cd ~/Downloads
-alias pacu sudo pacman -Syu $*
+alias pacs sudo pacman -Syu $*
 alias paci sudo pacman -S $*
+alias pacu sudo pacman -U $*
 alias pacr sudo pacman -Rsn $*
 alias pacq sudo pacman -Q $*
 alias pacc sudo pacman -Scc $*

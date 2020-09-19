@@ -219,8 +219,13 @@
 (use-package yaml-mode
   :ensure t)
 
+(use-package dap-mode
+  :ensure t
+  :pin melpa)
+
 (use-package lsp-mode
   :ensure t
+  :pin melpa
   :init
   (setq lsp-diagnostics-provider :flymake
         lsp-completion-provider :none

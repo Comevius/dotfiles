@@ -222,7 +222,7 @@
 (use-package lsp-mode
   :ensure t
   :init
-  (setq lsp-diagnostic-package :flymake
+  (setq lsp-diagnostics-provider :flymake
         lsp-completion-provider :none
         lsp-enable-snippet nil
         lsp-keymap-prefix "C-c l")

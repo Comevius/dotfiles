@@ -34,4 +34,4 @@ alias avds emulator -list-avds
 alias encr gpg --output $1.gpg --encrypt --recipient comevius@gmail.com $1
 alias -dpms xset s off -dpms
 alias +dpms xset s reset +dpms
-alias scrcpy scrcpy -S
+alias scrcpy scrcpy -Sw

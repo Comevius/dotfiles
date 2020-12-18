@@ -422,6 +422,9 @@ user_pref("browser.aboutConfig.showWarning",                  false);
 user_pref("full-screen-api.warning.delay",                    0);
 user_pref("full-screen-api.warning.timeout",                  0);
 
+// CSS visited links
+user_pref("layout.css.visited_links_enabled",                 false);
+
 // ------------------------------------------------------------------------
 
 // Animated image autoplay

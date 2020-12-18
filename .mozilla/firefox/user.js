@@ -521,6 +521,11 @@ user_pref("security.OCSP.enabled",                            0);
 // SSL
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken",  true);
 
+// HTTPS
+user_pref("dom.security.https_only_mode",                     true);
+user_pref("dom.security.https_only_mode.upgrade_local",       true);
+user_pref("dom.security.https_only_mode.upgrade_onion",       true);
+
 // ------------------------------------------------------------------------
 
 // WebRender

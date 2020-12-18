@@ -410,7 +410,7 @@ user_pref("image.animation_mode",                             "none");
 
 // Media autoplay
 user_pref("media.autoplay.default",                           5);
-user_pref("media.autoplay.blocking_policy",                   1);
+user_pref("media.autoplay.blocking_policy",                   0);
 user_pref("media.autoplay.allow-muted",                       false);
 
 // ------------------------------------------------------------------------

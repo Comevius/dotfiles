@@ -36,6 +36,7 @@ user_pref("captivedetect.canonicalURL",                      "");
 
 // Cookie
 user_pref("network.cookie.cookieBehavior",                   1);
+user_pref("network.cookie.lifetimePolicy",                   2);
 
 // Offline status
 user_pref("network.manage-offline-status",                   false);
@@ -286,12 +287,30 @@ user_pref("browser.uitour.url",                               "");
 
 // ------------------------------------------------------------------------
 
-// Bookmarks
-user_pref("browser.bookmarks.max_backups",                    2);
+// Clear recent history
+user_pref("privacy.cpd.cache",                               true);
+user_pref("privacy.cpd.cookies",                             true);
+user_pref("privacy.cpd.downloads",                           true);
+user_pref("privacy.cpd.formdata",                            true);
+user_pref("privacy.cpd.history",                             true);
+user_pref("privacy.cpd.offlineApps",                         true);
+user_pref("privacy.cpd.openWindows",                         true);
+user_pref("privacy.cpd.passwords",                           true);
+user_pref("privacy.cpd.sessions",                            true);
+user_pref("privacy.cpd.siteSettings",                        true);
+user_pref("privacy.sanitize.timeSpan",                       0);
 
-// Clear history
-user_pref("privacy.cpd.offlineApps",                          true);
-user_pref("privacy.sanitize.timeSpan",                        0);
+// Clear on shutdown
+user_pref("privacy.sanitize.sanitizeOnShutdown",             true);
+user_pref("privacy.clearOnShutdown.cache",                   true);
+user_pref("privacy.clearOnShutdown.cookies",                 true);
+user_pref("privacy.clearOnShutdown.downloads",               true);
+user_pref("privacy.clearOnShutdown.formdata",                true);
+user_pref("privacy.clearOnShutdown.history",                 true);
+user_pref("privacy.clearOnShutdown.offlineApps",             true);
+user_pref("privacy.clearOnShutdown.openWindows",             true);
+user_pref("privacy.clearOnShutdown.sessions",                true);
+user_pref("privacy.clearOnShutdown.siteSettings",            true);
 
 // Download manager
 user_pref("browser.helperApps.deleteTempFileOnExit",          true);

@@ -425,6 +425,9 @@ user_pref("full-screen-api.warning.timeout",                  0);
 // CSS visited links
 user_pref("layout.css.visited_links_enabled",                 false);
 
+// Spell checking
+user_pref("layout.spellcheckDefault",                         0);
+
 // ------------------------------------------------------------------------
 
 // Animated image autoplay

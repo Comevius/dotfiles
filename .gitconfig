@@ -1,0 +1,31 @@
+[user]
+    name = Comevius
+    email = comevius@gmail.com
+    signingKey = 2A0F16BC1CE9781B
+ 
+[commit]
+    gpgsign = true
+    template = ~/.gitmessage
+    verbose = true
+
+[core]
+    editor = helix
+    autocrlf = input
+
+[push]
+    default = current
+
+[pull]
+    rebase = true
+    
+[rebase]
+    autosquash = true
+    
+[fetch]
+    prune = true
+
+[alias]
+    tree = log --oneline --decorate --graph
+
+[init]
+	defaultBranch = trunk

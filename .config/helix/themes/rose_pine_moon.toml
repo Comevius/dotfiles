@@ -1,0 +1,72 @@
+"ui.background" = { bg = "surface" }
+"ui.menu" = "base"
+"ui.menu.selected" = { fg = "iris", bg = "surface" }
+"ui.linenr" = {fg = "subtle" }
+"ui.popup" = { bg = "overlay" }
+"ui.window" = { bg = "overlay" }
+"ui.liner.selected" = "highlightOverlay"
+"ui.selection" = { bg = "highlight", modifiers = ["reversed"] }
+"comment" = "subtle"
+"ui.statusline" = {fg = "foam", bg = "surface" }
+"ui.statusline.inactive" = { fg = "iris", bg = "surface" }
+"ui.help" = { fg = "foam", bg = "surface" }
+"ui.cursor" = { fg = "rose", modifiers = ["reversed"] }
+"ui.text" = { fg = "text" }
+"operator" = "rose"
+"ui.text.focus" = { fg = "base05" }
+"variable" = "text"
+"number" = "iris"
+"constant" = "gold"
+"attributes" = "gold" 
+"type" = "foam"
+"ui.cursor.match" = { fg = "gold", modifiers = ["underlined"] }
+"string"  = "gold"
+"property" = "foam"
+"escape" = "subtle"
+"function" = "rose"
+"function.builtin" = "rose"
+"function.method"  = "foam"
+"constructor" = "gold"
+"special" = "gold"
+"keyword" = "pine"
+"label" = "iris"
+"namespace" = "pine"
+"ui.popup" = { bg = "overlay" }
+"ui.window" = { bg = "base" }
+"ui.help" = { bg = "overlay", fg = "foam" }
+"text" = "text"
+"diff.plus" = "foam"
+"diff.delta" = "rose"
+"diff.minus" = "love"
+
+"info" = "gold"
+"hint" = "gold"
+"debug" = "rose"
+"diagnostic" = "rose"
+"error" = "love"
+
+"markup.heading" = { fg = "rose" }
+"markup.raw.inline" = { fg = "foam" }
+"markup.bold" = { fg = "gold", modifiers = ["bold"] }
+"markup.italic" = { fg = "iris", modifiers = ["italic"] }
+"markup.list" = { fg = "love" }
+"markup.quote" = { fg = "rose" }
+"markup.link.url" = { fg = "pine", modifiers = ["underlined"]}
+"markup.link.label" = { fg = "foam" }
+
+[palette]
+base     = "#232136" 
+surface  = "#2a273f" 
+overlay  = "#393552"
+inactive = "#59546d"
+subtle   = "#817c9c"
+text     = "#e0def4"
+love     = "#eb6f92"
+gold     = "#f6c177"
+rose     = "#ea9a97"
+pine     = "#3e8fb0"
+foam     = "#9ccfd8"
+iris     = "#c4a7e7"
+highlight = "#312f44"
+highlightInactive = "#2a283d"
+highlightOverlay = "#3f3c53"

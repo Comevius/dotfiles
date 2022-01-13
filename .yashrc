@@ -1,0 +1,19 @@
+. --autoload --no-alias initialization/common
+unset HISTFILE
+
+alias ls="ls -alh"
+alias du="du -h"
+alias df="df -h"alias free="free -m"
+alias pcpu="ps u -u comevius --sort=-pcpu"
+alias pmem="ps u -u comevius --sort=-pmem"
+alias pacs="sudo pacman -Syu"
+alias paci="sudo pacman -S"
+alias pacu="sudo pacman -U"
+alias pacr="sudo pacman -Rsn"
+alias pacq="sudo pacman -Q"
+alias pacc="sudo pacman -Scc"
+alias mount="udisksctl mount -b"
+alias umount="udisksctl unmount -b"
+alias loop="udisksctl loop-setup -rf"
+alias uloop="udisksctl loop-delete -b"
+alias utar="tar -xf"

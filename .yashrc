@@ -3,7 +3,8 @@ unset HISTFILE
 
 alias ls="ls -alh"
 alias du="du -h"
-alias df="df -h"alias free="free -m"
+alias df="df -h"
+alias free="free -m"
 alias pcpu="ps u -u comevius --sort=-pcpu"
 alias pmem="ps u -u comevius --sort=-pmem"
 alias pacs="sudo pacman -Syu"

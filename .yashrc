@@ -18,3 +18,15 @@ alias umount="udisksctl unmount -b"
 alias loop="udisksctl loop-setup -rf"
 alias uloop="udisksctl loop-delete -b"
 alias utar="tar -xf"
+alias hx="helix"
+
+ahx () {
+   local temp=$(mktemp)
+   trap 'rm -f "$temp"' 0 2 3 15
+   age -d -i $1 -o $temp $2
+   if [ $? -eq 0 ]; then
+       helix $temp
+       age -e -r $(basename $1) -o $2 $temp
+   fi
+   rm -f $temp
+}

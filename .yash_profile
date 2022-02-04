@@ -2,6 +2,7 @@
 
 . /etc/profile
 
+export EDITOR="helix"
 export BROWSER="firefox"
 export NO_AT_BRIDGE="1"
 export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP="1"

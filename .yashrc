@@ -20,18 +20,25 @@ alias uloop="udisksctl loop-delete -b"
 alias utar="tar -xf"
 alias hx="helix"
 
-ahx () {
-   local temp=$(mktemp)
-   trap 'rm -f "$temp"' 0 2 3 15
-   read -r key < $(dirname $1)/.gitignore
-   age -d -i $(dirname $1)/$key -o $temp $1
-   if [ $? -eq 0 ]; then
-       helix $temp
-       age -e -r $key -o $1 $temp
-       git add $1
-       if [ $? -eq 0 ]; then
-         git commit $1 -m "Update $(basename $1)"
-       fi
-   fi
-   rm -f $temp
+whx () {   
+    local temp=$(mktemp XXXXXXXXXXXXXXXX.md --tmpdir)
+    trap 'rm -f "$temp"' 0 2 3 15
+    read -r key < $(dirname $1)/.gitignore
+    age -d -i $(dirname $1)/$key -o $temp $1
+    if [ $? -eq 0 ]; then
+        helix $temp
+        age -e -r $key -o $1 $temp
+        git add $1
+        if [ $? -eq 0 ]; then
+            git commit $1 -m "Update $(basename $1)"
+        fi
+    fi
+    rm -f $temp
+}
+
+rhx () {
+    read -r key < $(dirname $1)/.gitignore
+    if temp=$(age -d -i $(dirname $1)/$key $1); then
+        echo $temp | helix
+    fi
 }

@@ -1,11 +1,5 @@
-[user]
-    name = Comevius
-    email = comevius@gmail.com
-    signingKey = 2A0F16BC1CE9781B
- 
 [commit]
     gpgsign = true
-    template = ~/.gitmessage
     verbose = true
 
 [core]
